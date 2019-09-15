@@ -17,9 +17,11 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "brautwurst" };
+                List<string> ingredients = new List<string>() ;
                 if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("onions");
+                if (onions) ingredients.Add("Onion");
+                if (brautwurst) ingredients.Add("Brautwurst");
+                if (whole_wheat_bun) ingredients.Add("Whole Wheat Bun");
                 return ingredients;
             }
         }

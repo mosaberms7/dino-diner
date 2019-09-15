@@ -7,14 +7,14 @@ namespace DinoDiner.Menu.Entrees
    public class TRexKingBurger
     {
         private bool whole_wheat_bun = true;
-        private bool steakburger_pattie = true;
-        private bool lettuce = true;
+       // private bool steakburger_pattie = true;
+        private bool Lettuce = true;
         private bool tomato = true;
-        private bool onion = true;
-        private bool pickle = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-        private bool mayo = true;
+        private bool Onion = true;
+        private bool Pickle = true;
+        private bool Ketchup = true;
+        private bool Mustard = true;
+        private bool Mayo = true;
         public double Price { get; set; }
         public uint Calories { get; set; }
 
@@ -23,15 +23,18 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> ingredients = new List<string>() { };
-                if (pickle) ingredients.Add("Peanut Butter");
-                if (ketchup) ingredients.Add("Jelly");
-                if (mustard) ingredients.Add("Jelly");
-                if (steakburger_pattie) ingredients.Add("Jelly");
-                if (whole_wheat_bun) ingredients.Add("Jelly");
-                if (lettuce) ingredients.Add("Jelly");
-                if (onion) ingredients.Add("Jelly");
-                if (mayo) ingredients.Add("Jelly");
-                if (tomato) ingredients.Add("Jelly");
+                if (Pickle) ingredients.Add("Pickle");
+                if (Ketchup) ingredients.Add("Ketchup");
+                if (Mustard) ingredients.Add("Mustard");
+
+                for (int i=0;i<3;i++) { 
+                     ingredients.Add("Steakburger Pattie");
+                                       }
+                if (whole_wheat_bun) ingredients.Add("Whole Wheat Bun");
+                if (Lettuce) ingredients.Add("Lettuce");
+                if (Onion) ingredients.Add("Onion");
+                if (Mayo) ingredients.Add("Mayo");
+                if (tomato) ingredients.Add("Tomato");
                 
                 return ingredients;
             }
@@ -50,15 +53,15 @@ namespace DinoDiner.Menu.Entrees
 
         public void HoldPickle()
         {
-            this.pickle = false;
+            this.Pickle = false;
         }
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            this.Ketchup = false;
         }
         public void HoldMustard()
         {
-            this.mustard = false;
+            this.Mustard = false;
         }
         public void HoldTomato()
         {
@@ -66,15 +69,15 @@ namespace DinoDiner.Menu.Entrees
         }
         public void HoldOnion()
         {
-            this.onion = false;
+            this.Onion = false;
         }
         public void HoldLettuce()
         {
-            this.lettuce = false;
+            this.Lettuce = false;
         }
         public void HoldMayo()
         {
-            this.mayo = false;
+            this.Mayo = false;
         }
 
 

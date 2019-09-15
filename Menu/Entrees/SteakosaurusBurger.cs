@@ -19,11 +19,11 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> ingredients = new List<string>() {};
-                if (pickle) ingredients.Add("Peanut Butter");
-                if (ketchup) ingredients.Add("Jelly");
-                if (mustard) ingredients.Add("Jelly");
-                if (steakburger_pattie) ingredients.Add("Jelly");
-                if (whole_wheat_bun) ingredients.Add("Jelly");
+                if (pickle) ingredients.Add("Pickle");
+                if (ketchup) ingredients.Add("Ketchup");
+                if (mustard) ingredients.Add("Mustard");
+                if (steakburger_pattie) ingredients.Add("Steakburger Pattie");
+                if (whole_wheat_bun) ingredients.Add("Whole Wheat Bun");
                 return ingredients;
             }
         }
