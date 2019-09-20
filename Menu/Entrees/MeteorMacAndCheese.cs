@@ -7,7 +7,8 @@ namespace DinoDiner.Menu.Entrees
 {
     class MeteorMacAndCheese : EntreeBase
     {
-        public MeteorMacAndCheese(Size s)
+        private Size s;
+        public MeteorMacAndCheese()
         {
             switch (s)
             {

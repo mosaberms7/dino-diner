@@ -7,7 +7,8 @@ namespace DinoDiner.Menu.Entrees
 {
     class Triceritots : EntreeBase
     {
-        public Triceritots(Size s)
+        private Size s;
+        public Triceritots()
         {
             switch (s)
             {

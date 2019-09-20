@@ -9,7 +9,8 @@ namespace DinoDiner.Menu.Entrees
 {
     class Fryceritops : EntreeBase
     {
-        public Fryceritops(Size s)
+        private Size s;
+        public Fryceritops()
         {
             switch (s)
             {
