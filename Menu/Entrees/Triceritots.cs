@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class Triceritots : Side
+    class Triceritots : EntreeBase
     {
         public Triceritots(Size s)
         {

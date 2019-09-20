@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class MeteorMacAndCheese : Side
+    class MeteorMacAndCheese : EntreeBase
     {
         public MeteorMacAndCheese(Size s)
         {

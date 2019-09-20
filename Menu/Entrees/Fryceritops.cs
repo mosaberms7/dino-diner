@@ -7,9 +7,8 @@ using DinoDiner.Menu.Sides;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class Fryceritops : Side
+    class Fryceritops : EntreeBase
     {
-        // public double Price { get; set; }
         public Fryceritops(Size s)
         {
             switch (s)

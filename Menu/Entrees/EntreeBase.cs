@@ -4,7 +4,11 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class EntreeBase
+    abstract class  EntreeBase
     {
+        public double Price { get; set; }
+        public uint Calories { get; set; }
+        public List<string> Ingredients { get; }
+
     }
 }

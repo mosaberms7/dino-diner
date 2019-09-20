@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class MezzorellaSicks : Side
+    class MezzorellaSicks : EntreeBase
     {
         public MezzorellaSicks(Size s)
         {
