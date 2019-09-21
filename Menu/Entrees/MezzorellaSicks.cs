@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace MenuTest.Sides
 {
-    class MezzorellaSicks : Side
+  public  class MezzorellaSticks : Side
     {
-        public MezzorellaSicks(Size s)
+        public MezzorellaSticks()
         {
            
             this.Ingredients.Add("breading");

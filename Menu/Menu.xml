@@ -294,6 +294,16 @@
              A methode to hold Cheese and sets the parmesan_cheese to False
             </summary>
         </member>
+        <member name="T:DinoDiner.Menu.Sides.Fryceritops">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Sides.Fryceritops.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Sides.Side.Price">
             <summary>
             Gets and sets the price

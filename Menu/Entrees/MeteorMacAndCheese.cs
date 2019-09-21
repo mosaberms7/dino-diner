@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu.Sides
 {
-    class MeteorMacAndCheese : Side
+   public class MeteorMacAndCheese : Side
     {
         
         public MeteorMacAndCheese()

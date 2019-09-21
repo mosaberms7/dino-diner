@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
+//using DinoDiner.Menu.Sides;
 
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu.Sides
 {
-    class Fryceritops : Side
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Fryceritops : Side
     {
-
+    /// <summary>
+    /// 
+    /// </summary>
         public Fryceritops()
         {
 
-            this.Ingredients.Add("potatoes");
-            this.Ingredients.Add("salt");
-            this.Ingredients.Add("vegtable oil");
+            this.Ingredients.Add("Potato");
+            this.Ingredients.Add("Salt");
+            this.Ingredients.Add("Vegetable Oil");
         }
 
         public override Size Size

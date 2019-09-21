@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+
+namespace MenuTest.Sides
 {
-    class Triceritots : Side
+  public  class Triceritots : Side
     {
         
         public Triceritots()
