@@ -4,17 +4,17 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-   public class SteakosaurusBurger
+   public class SteakosaurusBurger : EntreeBase
     {
         private bool whole_wheat_bun = true;
         private bool steakburger_pattie = true;
         private bool pickle = true;
         private bool ketchup = true;
         private bool mustard = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        public override double Price { get; set; }
+        public override uint Calories { get; set; }
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

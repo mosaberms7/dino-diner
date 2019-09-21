@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-   public class TRexKingBurger
+   public class TRexKingBurger : EntreeBase
     {
         private bool whole_wheat_bun = true;
        // private bool steakburger_pattie = true;
@@ -15,10 +15,10 @@ namespace DinoDiner.Menu.Entrees
         private bool Ketchup = true;
         private bool Mustard = true;
         private bool Mayo = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        public override double Price { get; set; }
+        public override uint Calories { get; set; }
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

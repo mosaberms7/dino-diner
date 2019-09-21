@@ -4,16 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-   public class VelociWrap
+   public class VelociWrap : EntreeBase
     {
         private bool flour_tortilla = true;
         private bool chicken_breast = true;
         private bool romaine_lettuce= true;
         private bool Ceasar_dressing= true;
         private bool parmesan_cheese= true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        public override double Price { get; set; }
+        public override uint Calories { get; set; }
+        public  override List<string> Ingredients
         {
             get
             {

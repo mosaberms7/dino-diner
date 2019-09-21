@@ -4,13 +4,13 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 { 
-   public class PterodactylWings
+   public class PterodactylWings : EntreeBase
     {
        
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        public override double Price { get; set; }
+        public override uint Calories { get; set; }
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

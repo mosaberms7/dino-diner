@@ -4,20 +4,20 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-   public class DinoNuggets
+   public class DinoNuggets:EntreeBase
     {
        
         private uint Nuggets = 6;
         
         
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        public override double Price { get; set; }
+        public override uint Calories { get; set; }
 
 
             
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             { 

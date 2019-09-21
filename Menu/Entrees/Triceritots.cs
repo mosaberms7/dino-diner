@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
 {
     class Triceritots : Side
     {
-        private Size s;
+        
         public Triceritots()
         {
             
@@ -16,10 +16,11 @@ namespace DinoDiner.Menu.Entrees
             this.Ingredients.Add("salt");
             this.Ingredients.Add("vegtable oil");
         }
-        public override Size Size {
+        public override Size Size
+        {
             set
             {
-                switch (s)
+                switch (Size)
                 {
                     case Size.Small:
                         this.Price = 0.99;
