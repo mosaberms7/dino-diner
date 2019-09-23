@@ -8,6 +8,7 @@ namespace MenuTest.Sides
 {
   public  class Triceritots : Side
     {
+
         
         public Triceritots()
         {

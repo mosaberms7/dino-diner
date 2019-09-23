@@ -8,18 +8,20 @@ namespace DinoDiner.Menu.Sides
    public class MeteorMacAndCheese : Side
     {
         
+        private Size size;
         public MeteorMacAndCheese()
         {
-           
-            this.Ingredients.Add("macaroni noodles");
-            this.Ingredients.Add("cheese product");
-            this.Ingredients.Add("pork sausage");
+            this.Price = 0.99;
+            this.Calories = 420;
+            this.Size = Size.Small;
         }
-        public override Size Size {
+        public override Size Size
+        {
 
             set
             {
-                switch (Size)
+                size = value;
+                switch (value)
                 {
                     case Size.Small:
                         this.Price = 0.99;
@@ -36,8 +38,24 @@ namespace DinoDiner.Menu.Sides
 
                 }
             }
+            get
+            {
+                return size;
+            }
+        }
 
+             public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Macaroni Noodles");
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Pork Sausage");
+            
+                return ingredients;
 
+            }
         }
 
 

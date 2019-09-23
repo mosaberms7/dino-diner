@@ -7,18 +7,22 @@ namespace MenuTest.Sides
 {
   public  class MezzorellaSticks : Side
     {
+        private Size size;
+
         public MezzorellaSticks()
         {
+            this.Size = Size.Small;
+            this.Price = 0.99;
+            this.Calories = 540;
            
-            this.Ingredients.Add("breading");
-            this.Ingredients.Add("cheese product");
-            this.Ingredients.Add("vegtable oil");
         }
         public override Size Size
         {
+            
             set
             {
-                switch (Size)
+                size = value;
+                switch (size)
                 {
                     case Size.Small:
                         this.Price = 0.99;
@@ -37,8 +41,19 @@ namespace MenuTest.Sides
             }
 
 
-}
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                this.Ingredients.Add("Breading");
+                this.Ingredients.Add("Cheese Product");
+                this.Ingredients.Add("Vegtable Oil");
+                return ingredients;
 
+            }
+        }
 
 
 

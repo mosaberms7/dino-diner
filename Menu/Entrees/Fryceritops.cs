@@ -7,46 +7,65 @@ using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Sides
 {
+    
     /// <summary>
     /// 
     /// </summary>
     public class Fryceritops : Side
     {
-    /// <summary>
-    /// 
-    /// </summary>
-        public Fryceritops()
-        {
-
-            this.Ingredients.Add("Potato");
-            this.Ingredients.Add("Salt");
-            this.Ingredients.Add("Vegetable Oil");
-        }
+        private Size size;
+        
 
         public override Size Size
         {
             set
             {
-                switch (Size)
+                size = value;
+                if (value == Size.Small) { 
+            //    this.Size = Size.Small;
+                    this.Price = 0.99;
+                    this.Calories = 222;
+                }
+                if (size == Size.Medium) {
+                  //  this.Size = Size.Medium;
+                    this.Price = 1.45;
+                    this.Calories = 365;
+                }
+                if (size == Size.Large)
                 {
-                    case Size.Small:
-                        this.Price = 0.99;
-                        this.Calories = 222;
-                        break;
-                    case Size.Medium:
-                        this.Price = 1.45;
-                        this.Calories = 365;
-                        break;
-                    case Size.Large:
-                        this.Price = 1.95;
-                        this.Calories = 480;
-                        break;
-
+                 //   this.Size = Size.Large;
+                    this.Price = 1.95;
+                    this.Calories = 480;
                 }
             }
-
+            get { return size; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Fryceritops()
+        {   this.Size = Size.Small;
+            this.Price = 0.99;
+            this.Calories = 222;
+            
+           
 
         }
+       
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
+                return ingredients;
+
+            }
+        }
+
+       
 
 
 
