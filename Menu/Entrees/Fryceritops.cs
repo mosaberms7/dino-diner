@@ -21,24 +21,26 @@ namespace DinoDiner.Menu.Sides
             set
             {
                 size = value;
-                if (value == Size.Small) { 
-            //    this.Size = Size.Small;
+                if (value == Size.Small)
+                { 
                     this.Price = 0.99;
                     this.Calories = 222;
                 }
-                if (size == Size.Medium) {
-                  //  this.Size = Size.Medium;
+                if (size == Size.Medium)
+                {
                     this.Price = 1.45;
                     this.Calories = 365;
                 }
                 if (size == Size.Large)
                 {
-                 //   this.Size = Size.Large;
                     this.Price = 1.95;
                     this.Calories = 480;
                 }
             }
-            get { return size; }
+            get
+            {
+                return size;
+            }
         }
         /// <summary>
         /// 
