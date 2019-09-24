@@ -9,13 +9,15 @@ namespace DinoDiner.Menu.Sides
 {
 
     /// <summary>
-    /// 
+    /// a class representing a side plate with 3 ingridents using list of strings
     /// </summary>
     public class Fryceritops : Side
     {
         private Size size;
 
-
+        /// <summary>
+        /// set and get of the size enum property
+        /// </summary>
         public override Size Size
         {
             set
@@ -43,7 +45,7 @@ namespace DinoDiner.Menu.Sides
             }
         }
         /// <summary>
-        /// 
+        /// constructs a new instance of Fryceritops with the supplied value for size, price, calories
         /// </summary>
         public Fryceritops()
         {
@@ -54,7 +56,9 @@ namespace DinoDiner.Menu.Sides
 
 
         }
-
+        /// <summary>
+        /// get the property ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
