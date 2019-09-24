@@ -4,7 +4,13 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class Sodasaurus
+    public class Sodasaurus : Drink
     {
+        public Sodasaurus() {
+            
+
+        }
+        public virtual SodasaurusFlavor Flavor { get; set; }
+
     }
 }
