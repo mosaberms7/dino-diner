@@ -4,15 +4,20 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Sodasaurus : Drink
+    public class Tyrannotea : Drink
     {
         private Size size;
-        public Sodasaurus() {
-            this.Price = 1.50;
-            this.Calories = 112;
+        public bool Sweet { get; set; }
+        public bool Lemon { get; set; }
 
+        public Tyrannotea()
+        {
+            this.Price = 0.99;
+            this.Calories = 8;
+            this.Sweet = false;
+            this.Lemon = false;
         }
-        public  SodasaurusFlavor Flavor { get; set; }
+        public SodasaurusFlavor Flavor { get; set; }
         public override Size Size
         {
 
@@ -22,16 +27,16 @@ namespace DinoDiner.Menu.Drinks
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = 1.50;
-                        this.Calories = 112;
+                        this.Price = 0.99;
+                        this.Calories = 8;
                         break;
                     case Size.Medium:
-                        this.Price = 2.00;
-                        this.Calories = 156;
+                        this.Price = 1.49;
+                        this.Calories = 16;
                         break;
                     case Size.Large:
-                        this.Price = 2.50;
-                        this.Calories = 208;
+                        this.Price = 1.99;
+                        this.Calories = 32;
                         break;
 
 
@@ -42,14 +47,21 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
+        public void AddLemon() {
+
+            this.Lemon = true;
+        }
         public override List<string> Ingredients
         {
             get
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                ingredients.Add("Natural Flavors");
-                ingredients.Add("Cane Sugar");
+                ingredients.Add("Tea");
+                if(Lemon)
+                 ingredients.Add("Lemon");
+                if(Sweet)
+                 ingredients.Add("Sweet");
                 return ingredients;
             }
         }
