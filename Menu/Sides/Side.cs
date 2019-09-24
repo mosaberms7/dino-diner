@@ -4,14 +4,27 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
+    /// <summary>
+    /// a enum represents the size of the side plate
+    /// </summary>
     public enum Size
     {
+        /// <summary>
+        /// represents the size small of the plate
+        /// </summary>
         Small,
+        /// <summary>
+        /// represents the medium size of the side plate
+        /// </summary>
         Medium, 
+        /// <summary>
+        /// representing the large size of the side plate
+        /// </summary>
         Large
     }
-
+    /// <summary>
+    /// an abstract class represents the side plate with 5 properties
+    /// </summary>
     public abstract class Side
     {
         /// <summary>
