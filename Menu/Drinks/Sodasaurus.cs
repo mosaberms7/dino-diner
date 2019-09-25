@@ -4,15 +4,22 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+   
     public class Sodasaurus : Drink
     {
+
         private Size size;
         public Sodasaurus() {
             this.Price = 1.50;
             this.Calories = 112;
 
         }
-        public  SodasaurusFlavor Flavor { get; set; }
+        private SodasaurusFlavor flavor;
+        public  SodasaurusFlavor Flavor
+        {
+            get { return flavor; }
+            set { flavor = value; }
+        }
         public override Size Size
         {
 

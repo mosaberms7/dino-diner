@@ -32,6 +32,7 @@ namespace DinoDiner.Menu.Drinks
         Cherry,
         Lime,
     }
+
     public abstract  class Drink
     {
         /// <summary>
