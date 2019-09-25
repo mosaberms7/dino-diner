@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+//using DinoDiner.Menu.Drinks;
+//using MenuTest.Drinks;
 
 namespace DinoDiner.Menu.Drinks
 {
@@ -12,6 +14,7 @@ namespace DinoDiner.Menu.Drinks
         public Sodasaurus() {
             this.Price = 1.50;
             this.Calories = 112;
+            this.Ice = true;
 
         }
         private SodasaurusFlavor flavor;

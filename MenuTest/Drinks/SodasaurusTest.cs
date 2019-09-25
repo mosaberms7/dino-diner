@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu;
 using Xunit;
+using DinoDiner.Menu;
 namespace MenuTest.Drinks
 {
  public  class SodasaurusTest

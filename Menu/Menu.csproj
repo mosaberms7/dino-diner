@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\dell\Desktop\new\Menu\Menu.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <ItemGroup>

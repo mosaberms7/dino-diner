@@ -22,16 +22,8 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         Large
     }
-    public enum SodasaurusFlavor
-    {
-        Cola,
-        Orange,
-        Vanilla,
-        Chocolate,
-        RootBeer,
-        Cherry,
-        Lime,
-    }
+
+   
 
     public abstract  class Drink
     {
