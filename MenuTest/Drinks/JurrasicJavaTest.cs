@@ -11,10 +11,10 @@ namespace MenuTest.Drinks
 
     {
         [Fact]
-        public void ShouldBeAbleToSetFlavorToCherry()
+        public void ShouldBeAbleToSetICetofalse()
         {
-            JurrasicJava ss = new Sodasaurus();
-            ss.Flavor = SodasaurusFlavor.Cherry;
+            JurrasicJava jj = new JurrasicJava();
+            jj.Ice = false;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cherry, ss.Flavor);
 
         }
