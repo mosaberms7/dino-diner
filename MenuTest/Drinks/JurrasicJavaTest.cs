@@ -15,48 +15,50 @@ namespace MenuTest.Drinks
         {
             JurrasicJava jj = new JurrasicJava();
             jj.Ice = false;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cherry, ss.Flavor);
+         
 
         }
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            Sodasaurus ss = new Sodasaurus();
-            Assert.Equal(1.50, ss.Price);
+            JurrasicJava jj = new JurrasicJava();
+            Assert.Equal(1.50, jj.Price);
         }
 
         [Fact]
         public void ShouldHaveDefaultIce()
         {
-            Sodasaurus ss = new Sodasaurus();
-            Assert.True(ss.Ice);
+            JurrasicJava jj = new JurrasicJava();
+            Assert.True(jj.Ice);
         }
 
 
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            Sodasaurus ss = new Sodasaurus();
-            Assert.Equal<uint>(112, ss.Calories);
+            JurrasicJava jj = new JurrasicJava();
+
+            Assert.Equal<uint>(112, jj.Calories);
         }
         [Fact]
         public void ShouldHaveCorrectIngedients()
         {
-            Sodasaurus ss = new Sodasaurus();
-            Assert.Contains<string>("Water", ss.Ingredients);
-            Assert.Contains<string>("Natural Flavors", ss.Ingredients);
-            Assert.Contains<string>("Cane Sugar", ss.Ingredients);
-            Assert.Equal<int>(3, ss.Ingredients.Count);
+            JurrasicJava jj = new JurrasicJava();
+
+            Assert.Contains<string>("Water", jj.Ingredients);
+            Assert.Contains<string>("Natural Flavors", jj.Ingredients);
+            Assert.Contains<string>("Cane Sugar", jj.Ingredients);
+            Assert.Equal<int>(3, jj.Ingredients.Count);
         }
         //the correct price after setting to small, meduim, large
         [Fact]
         public void ShouldHaveCorrectPriceAfterSettingSmall()
         {
 
-            Sodasaurus soda = new Sodasaurus();
-            soda.Size = Size.Medium;
-            soda.Size = Size.Small;
-            Assert.Equal<double>(1.50, soda.Price);
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Medium;
+            jj.Size = Size.Small;
+            Assert.Equal<double>(1.50, jj.Price);
 
         }
         [Fact]
@@ -80,4 +82,4 @@ namespace MenuTest.Drinks
     }
 
 }
-}
+

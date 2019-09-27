@@ -46,7 +46,7 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Cane Sugar", ss.Ingredients);
             Assert.Equal<int>(3, ss.Ingredients.Count);
         }
-        //the correct price after setting to small, meduim, large
+
         [Fact]
         public void ShouldHaveCorrectPriceAfterSettingSmall()
         {
