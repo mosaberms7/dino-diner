@@ -7,7 +7,7 @@ using DinoDiner.Menu.Drinks;
 
 namespace MenuTest.Drinks
 {
-    class JurrasicJavaTest
+  public  class JurrasicJavaTest
 
     {
         [Fact]
