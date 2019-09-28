@@ -37,7 +37,6 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultCalories()
         {
             JurrasicJava jj = new JurrasicJava();
-
             Assert.Equal<uint>(112, jj.Calories);
         }
         [Fact]
@@ -56,7 +55,7 @@ namespace MenuTest.Drinks
         {
 
             JurrasicJava jj = new JurrasicJava();
-            jj.Size = Size.Medium;
+            
             jj.Size = Size.Small;
             Assert.Equal<double>(1.50, jj.Price);
 
@@ -65,20 +64,38 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectPriceAfterSettingMeduim()
         {
 
-            Sodasaurus soda = new Sodasaurus();
-            soda.Size = Size.Medium;
-            Assert.Equal<double>(2.00, soda.Price);
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Medium;
+            Assert.Equal<double>(0.99, jj.Price);
 
         }
         [Fact]
         public void ShouldHaveCorrectPriceAfterSettingLarge()
         {
-
-            Sodasaurus soda = new Sodasaurus();
-            soda.Size = Size.Large;
-            Assert.Equal<double>(2.50, soda.Price);
-
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Large;
+            Assert.Equal<double>(1.49, jj.Price);
         }
+        public void ShouldHaveCorrectCaloriesAfterSettingSmall()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Small;
+            Assert.Equal<uint>(2, jj.Calories);
+        }
+        public void ShouldHaveCorrectCaloriesAfterSettingMeduim()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Medium;
+            Assert.Equal<uint>(4, jj.Calories);
+        }
+        public void ShouldHaveCorrectCaloriesAfterSettingLarge()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Large;
+            Assert.Equal<uint>(8, jj.Calories);
+        }
+
+
     }
 
 }

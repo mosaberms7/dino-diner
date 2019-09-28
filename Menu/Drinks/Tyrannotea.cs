@@ -51,6 +51,19 @@ namespace DinoDiner.Menu.Drinks
 
             this.Lemon = true;
         }
+        public void AddSweet()
+        {
+            this.Sweet = true;
+            this.Calories *= 2;
+        }
+        public void ReHoldSweet()
+        {
+            if (this.Sweet)
+            {
+                this.Sweet = false;
+                this.Calories /= 2;
+            }
+        }
         public override List<string> Ingredients
         {
             get

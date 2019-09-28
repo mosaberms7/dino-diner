@@ -11,6 +11,9 @@ namespace DinoDiner.Menu.Drinks
         public Water()
         {
             this.Lemon = false;
+            this.Ice = true;
+            this.Price = 0.10;
+            this.Calories = 0;
         }
        
         public void AddLemon()
