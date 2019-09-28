@@ -7,9 +7,19 @@ namespace DinoDiner.Menu.Drinks
     public class Tyrannotea : Drink
     {
         private Size size;
+        /// <summary>
+        /// setter and getter for the sweet property
+        /// </summary>
         public bool Sweet { get; set; }
+        /// <summary>
+        /// setter and getter for the lemon flavor
+        /// </summary>
         public bool Lemon { get; set; }
-
+        /// <summary>
+        /// constructs anew instance of Tyrannotea with default price=0.99,calories=8
+        /// sweet =false
+        /// lemon = false
+        /// </summary>
         public Tyrannotea()
         {
             this.Price = 0.99;
@@ -17,7 +27,13 @@ namespace DinoDiner.Menu.Drinks
             this.Sweet = false;
             this.Lemon = false;
         }
+        /// <summary>
+        /// setter and getter for the flavor property
+        /// </summary>
         public SodasaurusFlavor Flavor { get; set; }
+        /// <summary>
+        /// setter and getter for the sixe property
+        /// </summary>
         public override Size Size
         {
 
@@ -47,15 +63,24 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
+        /// <summary>
+        /// a methode to set the lemon property to true
+        /// </summary>
         public void AddLemon() {
 
             this.Lemon = true;
         }
+        /// <summary>
+        /// amethode to add sweet
+        /// </summary>
         public void AddSweet()
         {
             this.Sweet = true;
             this.Calories *= 2;
         }
+        /// <summary>
+        /// methode to hold the sweet after adding
+        /// </summary>
         public void ReHoldSweet()
         {
             if (this.Sweet)
@@ -64,6 +89,9 @@ namespace DinoDiner.Menu.Drinks
                 this.Calories /= 2;
             }
         }
+        /// <summary>
+        /// getter for the ingredients property
+        /// </summary>
         public override List<string> Ingredients
         {
             get

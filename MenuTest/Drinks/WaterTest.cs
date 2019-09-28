@@ -40,12 +40,14 @@ namespace MenuTest.Drinks
             Assert.False(w.Lemon);
 
         }
+        [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
             Water w = new Water();
             w.Size = Size.Medium;
             Assert.Equal<Size>(Size.Medium, w.Size);
         }
+        [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
             Water w = new Water();
@@ -87,12 +89,17 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Ice", w.Ingredients);
             Assert.Equal<int>(2, w.Ingredients.Count);
         }
+        [Fact]
+
         public void HoldIceShouldRemoveIce()
         {
             Water w = new Water();
             w.HoldIce();
+            Assert.False(w.Ice);
             Assert.DoesNotContain<string>("Ice", w.Ingredients);
         }
+        [Fact]
+
         public void AddLemonShouldAddLemon()
         {
             Water w = new Water();

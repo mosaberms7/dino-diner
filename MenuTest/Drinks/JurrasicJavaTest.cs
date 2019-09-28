@@ -22,14 +22,14 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultPrice()
         {
             JurrasicJava jj = new JurrasicJava();
-            Assert.Equal(1.50, jj.Price);
+            Assert.Equal<double>(0.59, jj.Price);
         }
 
         [Fact]
         public void ShouldHaveDefaultIce()
         {
             JurrasicJava jj = new JurrasicJava();
-            Assert.True(jj.Ice);
+            Assert.False(jj.Ice);
         }
 
 
@@ -37,7 +37,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultCalories()
         {
             JurrasicJava jj = new JurrasicJava();
-            Assert.Equal<uint>(112, jj.Calories);
+            Assert.Equal<uint>(2, jj.Calories);
         }
         [Fact]
         public void ShouldHaveCorrectIngedients()
@@ -45,9 +45,8 @@ namespace MenuTest.Drinks
             JurrasicJava jj = new JurrasicJava();
 
             Assert.Contains<string>("Water", jj.Ingredients);
-            Assert.Contains<string>("Natural Flavors", jj.Ingredients);
-            Assert.Contains<string>("Cane Sugar", jj.Ingredients);
-            Assert.Equal<int>(3, jj.Ingredients.Count);
+            Assert.Contains<string>("Coffee", jj.Ingredients);
+            Assert.Equal<int>(2, jj.Ingredients.Count);
         }
         //the correct price after setting to small, meduim, large
         [Fact]
@@ -57,7 +56,7 @@ namespace MenuTest.Drinks
             JurrasicJava jj = new JurrasicJava();
             
             jj.Size = Size.Small;
-            Assert.Equal<double>(1.50, jj.Price);
+            Assert.Equal<double>(0.59, jj.Price);
 
         }
         [Fact]
@@ -76,25 +75,73 @@ namespace MenuTest.Drinks
             jj.Size = Size.Large;
             Assert.Equal<double>(1.49, jj.Price);
         }
+        [Fact]
+
         public void ShouldHaveCorrectCaloriesAfterSettingSmall()
         {
             JurrasicJava jj = new JurrasicJava();
             jj.Size = Size.Small;
             Assert.Equal<uint>(2, jj.Calories);
         }
+        [Fact]
+
         public void ShouldHaveCorrectCaloriesAfterSettingMeduim()
         {
             JurrasicJava jj = new JurrasicJava();
             jj.Size = Size.Medium;
             Assert.Equal<uint>(4, jj.Calories);
         }
+        [Fact]
+
         public void ShouldHaveCorrectCaloriesAfterSettingLarge()
         {
             JurrasicJava jj = new JurrasicJava();
             jj.Size = Size.Large;
             Assert.Equal<uint>(8, jj.Calories);
         }
+        [Fact]
 
+        public void ShouldBeAbleToSetSizeToMedium()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Medium;
+            Assert.Equal<Size>(Size.Medium, jj.Size);
+        }
+        [Fact]
+
+        public void ShouldBeAbleToSetSizeToLarge()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.Size = Size.Large;
+            Assert.Equal<Size>(Size.Large, jj.Size);
+        }
+        [Fact]
+
+        public void ShouldDefaultHaveNOroomforCream()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            Assert.False(jj.RoomForCream);
+        }
+        [Fact]
+
+        public void ShouldtHaveRoomforCream()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.LeaveRoomForCream();
+
+            Assert.True(jj.RoomForCream);
+        }
+        [Fact]
+
+        public void AddIceShouldAddIce()
+        {
+            JurrasicJava jj = new JurrasicJava();
+            jj.AddIce();
+            Assert.True(jj.Ice);
+            Assert.Contains<string>("Ice", jj.Ingredients);
+            Assert.Equal<int>(3, jj.Ingredients.Count);
+
+        }
 
     }
 

@@ -11,6 +11,9 @@ namespace DinoDiner.Menu.Drinks
     {
 
         private Size size;
+        /// <summary>
+        ///Constructs a new instance of TrexKingBurger with price property sets to 1.50 and calories property sets to 112 and the ice property to true 
+        /// </summary>
         public Sodasaurus() {
             this.Price = 1.50;
             this.Calories = 112;
@@ -18,11 +21,17 @@ namespace DinoDiner.Menu.Drinks
 
         }
         private SodasaurusFlavor flavor;
+        /// <summary>
+        /// the setter and getter of the sodasaurseFlavor property
+        /// </summary>
         public  SodasaurusFlavor Flavor
         {
             get { return flavor; }
             set { flavor = value; }
         }
+        /// <summary>
+        ///setter and getter for the Size property 
+        /// </summary>
         public override Size Size
         {
 
@@ -52,6 +61,9 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
+        /// <summary>
+        /// getter fot the property ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -60,8 +72,12 @@ namespace DinoDiner.Menu.Drinks
                 ingredients.Add("Water");
                 ingredients.Add("Natural Flavors");
                 ingredients.Add("Cane Sugar");
+                if(this.Ice)
+                    ingredients.Add("Ice");
+
                 return ingredients;
             }
         }
+        
     }
 }
