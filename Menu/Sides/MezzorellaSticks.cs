@@ -1,10 +1,10 @@
 ﻿using DinoDiner.Menu.Sides;
 using System;
 using System.Collections.Generic;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 using System.Text;
 
-namespace MenuTest.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class representing a side plate with 3 ingrediants using string
@@ -73,7 +73,11 @@ namespace MenuTest.Sides
 
             }
         }
+        public override string ToString()
+        {
+            return "Mezzorella - Stick"s;
 
+        }
 
 
     }

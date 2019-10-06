@@ -4,7 +4,7 @@ using System.Text;
 //using DinoDiner.Menu.Drinks;
 //using MenuTest.Drinks;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
    
     public class Sodasaurus : Drink
@@ -78,6 +78,12 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
-        
+        public override string ToString()
+        {
+            return "Soda-Saurus";
+
+        }
+
+
     }
 }

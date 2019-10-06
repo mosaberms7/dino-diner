@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// 
     /// </summary>
-   public class Brontowurst:EntreeBase
+   public class Brontowurst:Entree
     {
         private bool brautwurst = true;
         private bool whole_wheat_bun = true;
@@ -68,5 +68,11 @@ namespace DinoDiner.Menu.Entrees
             this.whole_wheat_bun = false;
 
         }
+        public override string ToString()
+        {
+            return "Brontowurst";
+
+        }
+
     }
 }

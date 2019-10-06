@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class representing  an entree plaate 
     /// </summary>
-   public class TRexKingBurger : EntreeBase
+   public class TRexKingBurger : Entree
     {
         private bool whole_wheat_bun = true;
         private bool Lettuce = true;
@@ -113,6 +113,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.Mayo = false;
+        }
+        public override string ToString()
+        {
+            return "TRex-King-Burger";
+
         }
 
 

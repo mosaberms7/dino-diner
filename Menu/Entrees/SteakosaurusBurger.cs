@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class representing a Entree plate
     /// </summary>
-   public class SteakosaurusBurger : EntreeBase
+   public class SteakosaurusBurger : Entree
     {
         private bool whole_wheat_bun = true;
         private bool steakburger_pattie = true;
@@ -73,6 +73,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             this.mustard = false;
+        }
+        public override string ToString()
+        {
+            return "PrehistoricPBJ";
+
         }
     }
 }

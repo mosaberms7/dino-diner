@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// an abstract class with 3 properties
     /// </summary>
-   public abstract class  EntreeBase
+   public abstract class  Entree : MenuItem
     {
         /// <summary>
         /// setter and getter fot the Price property
@@ -21,6 +21,15 @@ namespace DinoDiner.Menu.Entrees
         /// getter for the Ingrediants property
         /// </summary>
         public virtual List<string> Ingredients { get; }
+        /// <summary>
+        /// methode to print the name of the class
+        /// </summary>
+        public virtual string ToString()
+        {
+            return "";
+
+
+        }
 
     }
 }

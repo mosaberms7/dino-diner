@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-   
+
     /// <summary>
     /// an abstract class represents the side plate with 5 properties
     /// </summary>
-    public abstract class Side
+    public abstract class Side : MenuItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -30,6 +29,13 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; }
+
+
+        public virtual string ToString()
+        {
+            return "";
+
+        }
 
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class JurrasicJava : Drink
     {
@@ -98,5 +98,13 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
+
+        public override string ToString()
+        {
+            return "Jurrasic-Java";
+
+
+        }
+
     }
 }

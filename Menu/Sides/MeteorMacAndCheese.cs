@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class representing a side plate contains 3 ingredients using list of strings
@@ -70,7 +70,11 @@ namespace DinoDiner.Menu.Sides
 
             }
         }
+        public override string ToString()
+        {
+            return "Meteor-Mac-And-Cheese";
 
+        }
 
     }
 }

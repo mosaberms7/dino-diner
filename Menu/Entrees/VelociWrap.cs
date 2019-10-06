@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {/// <summary>
 /// a class representing an entree plate
 /// </summary>
-   public class VelociWrap : EntreeBase
+   public class VelociWrap : Entree
     {
        
         private bool flour_tortilla = true;
@@ -71,6 +71,10 @@ namespace DinoDiner.Menu.Entrees
         {
             this.parmesan_cheese = false;
 
+        }
+        public override string ToString()
+        {
+            return "VelociWrap";
         }
     }
 }

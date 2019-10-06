@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Menue;
+//using DinoDiner.Menu.Entrees;
+//using DinoDiner.Menu.Menue;
 using DinoDiner.Menu.Sides;
-using DinoDiner.Menu.Drinks;
+//using DinoDiner.Menu.Drinks;
 
 
 
-namespace DinoDiner.Menu.Menue
+namespace DinoDiner.Menu
 {
-    public class cretaceousecombo
+    public class cretaceousecombo : MenuItem
     {
+        public double Price { get; }
 
         private Size size = Size.Small;
-        public EntreeBase Entree { get; set; }
+        public Entree Entree { get; set; }
         public Side side {
             get
             {
@@ -53,14 +54,20 @@ namespace DinoDiner.Menu.Menue
         }
     }
 
-    public uint calories { get { return Entree.Calories + side.Calories + drink.Calories;  }    }
-    public cretaceousecombo(EntreeBase e) {
+    public uint Calories { get { return Entree.Calories + side.Calories + drink.Calories;  }    }
+    public cretaceousecombo(Entree e) {
             this.Entree = e;
             side = new Fryceritops();
             drink = new Sodasaurus();
         }
-    
+        public virtual void ToString()
+        {
+            Console.WriteLine("");
 
-}
+
+        }
+
+
+    }
     }
 

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 { /// <summary>
 /// a class representing an entree plate 
 /// </summary>
-   public class PterodactylWings : EntreeBase
+   public class PterodactylWings : Entree
     {
         /// <summary>
         /// setter and getter of the price property
@@ -35,7 +35,12 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 7.21;
             this.Calories = 318;
         }
+        public override string  ToString()
+        {
+            return "PrehistoricPBJ";
 
-        
-}
+        }
+
+
+    }
 }

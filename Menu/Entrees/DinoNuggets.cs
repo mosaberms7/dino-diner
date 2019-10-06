@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class 
     /// </summary>
-   public class DinoNuggets:EntreeBase
+   public class DinoNuggets:Entree
     {
        private uint Nuggets = 6;
        ///setter and getter for the price property 
@@ -51,9 +51,13 @@ namespace DinoDiner.Menu.Entrees
             this.Nuggets++;
 
         }
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
+
+        }
 
 
-        
     }
 }
 

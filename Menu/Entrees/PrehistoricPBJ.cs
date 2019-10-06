@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Text;
+using System;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
- /// <summary>
-/// 
-/// </summary>
-    public class PrehistoricPBJ : EntreeBase
+    /// <summary>
+    /// 
+    /// </summary>
+    public class PrehistoricPBJ : Entree
     {
         private bool peanutButter = true;
         private bool jelly = true;
@@ -53,5 +55,12 @@ namespace DinoDiner.Menu.Entrees
         {
             this.jelly = false;
         }
+    
+        public override string ToString()
+        {
+            return "PrehistoricPBJ";
+
+        }
+
     }
 }

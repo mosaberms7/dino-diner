@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// a enum represents the size of the side plate
@@ -25,7 +25,7 @@ namespace DinoDiner.Menu.Drinks
 
    
 
-    public abstract  class Drink
+    public abstract  class Drink  : MenuItem
     {
         /// <summary>
         /// setter and getter fot the Price property
@@ -46,12 +46,23 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public virtual Size Size { get; set; }
         /// <summary>
-        /// 
+        /// Ice property
         /// </summary>
         public virtual bool Ice { get; set; }
-
+        /// <summary>
+        /// methode to hold the ice , set the ice property to false
+        /// </summary>
         public virtual void HoldIce() {
             this.Ice = false;
+
+        }
+        /// <summary>
+        /// methode to print the name of the item
+        /// </summary>
+        public virtual string ToString()
+        {
+            return "";
+
 
         }
     }
