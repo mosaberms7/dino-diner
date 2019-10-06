@@ -4,7 +4,9 @@ using DinoDiner.Menu;
 
 
 namespace MenuTest.Sides
+    
 {
+
     public class FryceritopsTest
     {
         [Fact]
