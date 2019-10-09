@@ -15,13 +15,13 @@
             </Style>
 
         </WrapPanel.Style>
-        <Button Content="Dino-Nuggets" Height="200" Width="200"/>
+        <Button Content="Dino-Nuggets" Height="100" Width="100"/>
         <Button Content="Bronwurst combo"/>
         <Button Content="Staeakosarus combo"/>
         <Button Content="T-Rex king Burger Combo"/>
         <Button Content="Prehistoric PB&amp;j combo"/>
-        <Button Content="Pterodactyl Wings Combos"Height="200" Width="200" />
-        <Button Content="Veloci-Wrap Combo"Height="200" Width="200"/>
+        <Button Content="Pterodactyl Wings Combos" Width="89" />
+        <Button Content="Veloci-Wrap Combo" Height="102"/>
     </WrapPanel>
 
 </Page>

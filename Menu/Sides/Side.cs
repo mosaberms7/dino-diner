@@ -31,11 +31,8 @@ namespace DinoDiner.Menu
         public virtual Size Size { get; set; }
 
 
-        public virtual string ToString()
-        {
-            return "";
-
-        }
+        public abstract string ToString();
+        
 
     }
 }
