@@ -6,13 +6,6 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-<<<<<<< HEAD
-  <ItemGroup>
-  
-  </ItemGroup>
-=======
->>>>>>> e8f803764d5c8f635419d3bc303500bc19e8b041
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
