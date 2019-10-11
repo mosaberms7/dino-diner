@@ -8,20 +8,59 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ComboSelection">
     <WrapPanel>
-        <WrapPanel.Style>
+        <WrapPanel.Resources>
             <Style TargetType="Button">
                 <Setter Property="MinWidth" Value="140"/>
                 <Setter Property="MinHeight" Value="200"/>
             </Style>
 
-        </WrapPanel.Style>
-        <Button Content="Dino-Nuggets" Height="100" Width="100"/>
-        <Button Content="Bronwurst combo"/>
-        <Button Content="Staeakosarus combo"/>
-        <Button Content="T-Rex king Burger Combo"/>
-        <Button Content="Prehistoric PB&amp;j combo"/>
-        <Button Content="Pterodactyl Wings Combos" Width="89" />
-        <Button Content="Veloci-Wrap Combo" Height="102"/>
+
+        </WrapPanel.Resources>
+        <Button >
+            <StackPanel>
+                <Image Width="100" Source="assets/DinoDiner-01.png"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+
+
+        </Button>
+        <Button >
+            <StackPanel>
+                <Image Width="100" Source="assets/DinoDiner-02.png"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="assets/DinoDiner-03.png"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="104" Source="assets/DinoDiner-04.png" Height="107"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="assets/DinoDiner-05.png"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button >
+            <StackPanel>
+                <Image Width="100" Source="assets/DinoDiner-06.png"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="assets/DinoDiner-07.png"/>
+                <TextBlock>Brokdsclkn</TextBlock>
+            </StackPanel>
+        </Button>
     </WrapPanel>
 
 </Page>

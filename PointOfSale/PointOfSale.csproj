@@ -107,5 +107,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="assets\DinoDiner-01.png" />
+    <Resource Include="assets\DinoDiner-02.png" />
+    <Resource Include="assets\DinoDiner-03.png" />
+    <Resource Include="assets\DinoDiner-04.png" />
+    <Resource Include="assets\DinoDiner-05.png" />
+    <Resource Include="assets\DinoDiner-06.png" />
+    <Resource Include="assets\DinoDiner-07.png" />
+    <Resource Include="assets\DinoDiner-08.png" />
+    <Resource Include="assets\DinoDiner-09.png" />
+    <Resource Include="assets\DinoDiner-10.png" />
+    <Resource Include="assets\DinoDiner-11.png" />
+    <Resource Include="assets\DinoDiner-12.png" />
+    <Resource Include="assets\DinoDiner-13.png" />
+    <Resource Include="assets\DinoDiner-14.png" />
+    <Resource Include="assets\DinoDiner-15.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
