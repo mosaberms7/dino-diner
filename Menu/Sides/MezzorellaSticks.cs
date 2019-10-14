@@ -1,4 +1,4 @@
-﻿using DinoDiner.Menu.Sides;
+﻿using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using DinoDiner.Menu;
@@ -75,7 +75,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return "Mezzorella - Stick"s;
+            return "Mezzorella - Stick";
 
         }
 

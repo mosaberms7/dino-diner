@@ -4,7 +4,7 @@ using System.Text;
 
 //using DinoDiner.Menu.Entrees;
 //using DinoDiner.Menu.Menue;
-using DinoDiner.Menu.Sides;
+using DinoDiner.Menu;
 //using DinoDiner.Menu.Drinks;
 
 
@@ -13,7 +13,7 @@ namespace DinoDiner.Menu
 {
     public class cretaceousecombo : MenuItem
     {
-        public double Price { get; }
+       
 
         private Size size = Size.Small;
         public Entree Entree { get; set; }

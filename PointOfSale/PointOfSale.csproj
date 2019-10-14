@@ -54,7 +54,30 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="ComboSelection.xaml">
+    <Compile Include="ComboSelection2.xaml.cs">
+      <DependentUpon>ComboSelection2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrinkSelection.xaml.cs">
+      <DependentUpon>DrinkSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlavorSelection.xaml.cs">
+      <DependentUpon>FlavorSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeSelection2.xaml.cs">
+      <DependentUpon>EntreeSelection2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SideSelection.xaml.cs">
+      <DependentUpon>SideSelection.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ComboSelection2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeCombo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlavorSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -66,14 +89,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ComboSelection.xaml.cs">
-      <DependentUpon>ComboSelection.xaml</DependentUpon>
+    <Compile Include="CustomizeCombo.xaml.cs">
+      <DependentUpon>CustomizeCombo.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="EntreeSelection2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenueCategorySelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DrinkSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SideSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,6 +134,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="assets\van.jpeg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,7 +143,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="assets\combo.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\DinoDiner-01.png" />
     <Resource Include="assets\DinoDiner-02.png" />
@@ -124,6 +162,45 @@
     <Resource Include="assets\DinoDiner-13.png" />
     <Resource Include="assets\DinoDiner-14.png" />
     <Resource Include="assets\DinoDiner-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\drink.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\burger.jpg" />
+    <Resource Include="assets\burger2.jpg" />
+    <Resource Include="assets\hotdog.jpg" />
+    <Resource Include="assets\nuggets.jpg" />
+    <Resource Include="assets\pbj.jpeg" />
+    <Resource Include="assets\wings.jpeg" />
+    <Resource Include="assets\wrap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\tea.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\l.jpg" />
+    <Resource Include="assets\m.jpg" />
+    <Resource Include="assets\small.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\d.jpg" />
+    <Resource Include="assets\ice.jpeg" />
+    <Resource Include="assets\nolemon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\lemon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\noice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\cherry.jpg" />
+    <Resource Include="assets\choco.jpg" />
+    <Resource Include="assets\cola.jpg" />
+    <Resource Include="assets\lime.jpg" />
+    <Resource Include="assets\orange.png" />
+    <Resource Include="assets\rb.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

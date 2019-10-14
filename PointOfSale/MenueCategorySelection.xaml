@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="650" d:DesignWidth="900"
       Title="MenueCategorySelection">
 
     <Grid>
@@ -19,13 +19,35 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="SelectCombo" Grid.Column="0" Grid.Row="0">combos</Button>
-        <Button Grid.Row="0"  Grid.Column="1">Entrees
+        <Button Name="generate32"
+            x:Uid="GenerateButton"
+            Click="generate_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/combo.jpg"/>
+            </Button.Background>
         </Button>
-        
-        <Button Grid.Row="1" Grid.Column="0" >Side</Button>
-        <Button Grid.Row="1" Grid.Column="1" >Drink</Button>
+        <Button Name="generate3"
+            x:Uid="GenerateButton"
+            Click="generate_Click" Grid.Column="1" Margin="10.4,-10,-9,9.8">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/entree.jpg"/>
+            </Button.Background>
+        </Button>
 
+        <Button Name="generat"
+            x:Uid="GenerateButton"
+            Click="generate_Click" Margin="10.4,10.2,-10,-10.4" Grid.Column="1" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/drink.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Name="generate"
+            x:Uid="GenerateButton"
+            Click="generate_Click" Grid.ColumnSpan="2" Margin="0,10.2,450,-10.4" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/side.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>
