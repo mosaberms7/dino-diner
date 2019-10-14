@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MenueCategorySelection.xaml
+    /// Interaction logic for MenuCategorySelection.xaml
     /// </summary>
-    public partial class MenueCategorySelection : Page
+    public partial class MenuCategorySelection : Page
     {
-        public MenueCategorySelection()
+        public MenuCategorySelection()
         {
             InitializeComponent();
         }

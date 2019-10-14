@@ -63,14 +63,17 @@
     <Compile Include="FlavorSelection.xaml.cs">
       <DependentUpon>FlavorSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EntreeSelection2.xaml.cs">
-      <DependentUpon>EntreeSelection2.xaml</DependentUpon>
+    <Compile Include="EntreeSelection.xaml.cs">
+      <DependentUpon>EntreeSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenueCategorySelection.xaml.cs">
-      <DependentUpon>MenueCategorySelection.xaml</DependentUpon>
+    <Compile Include="MenuCategorySelection.xaml.cs">
+      <DependentUpon>MenuCategorySelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
     </Compile>
     <Page Include="ComboSelection.xaml">
       <SubType>Designer</SubType>
@@ -99,7 +102,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="EntreeSelection2.xaml">
+    <Page Include="EntreeSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,11 +110,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenueCategorySelection.xaml">
+    <Page Include="MenuCategorySelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +137,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="assets\water.jpeg" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,8 +148,20 @@
     <Resource Include="assets\m2.jpg" />
     <Resource Include="assets\ss.jpg" />
     <Resource Include="assets\sst.jpg" />
+    <Resource Include="assets\entree.jpg" />
+    <Resource Include="assets\f2.jpeg" />
+    <Resource Include="assets\java.jpg" />
+    <Resource Include="assets\mmc.jpg" />
+    <Resource Include="assets\ms.jpeg" />
+    <Resource Include="assets\side.png" />
+    <Resource Include="assets\siz.jpg" />
+    <Resource Include="assets\size.jpg" />
+    <Resource Include="assets\soda.jpg" />
+    <Resource Include="assets\ss3.jpg" />
     <Content Include="assets\van.jpeg" />
     <Content Include="assets\trex.jpg" />
+    <None Include="assets\desktop.ini" />
+    <None Include="assets\s2.webp" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

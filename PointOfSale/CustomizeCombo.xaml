@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="900"
       Title="SideSelection">
-    <Grid  >
+    <Grid Background="Black" >
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

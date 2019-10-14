@@ -8,7 +8,7 @@
       d:DesignHeight="650" d:DesignWidth="900"
       Title="ComboSelection2">
 
-    <Grid  >
+    <Grid Background="Black" >
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

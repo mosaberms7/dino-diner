@@ -8,8 +8,9 @@
       d:DesignHeight="650" d:DesignWidth="900"
       Title="ComboSelection2">
 
-    <Grid  >
+    <Grid Background="Black">
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
 
@@ -18,15 +19,15 @@
             <ColumnDefinition/>
 
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+       
 
-        <Button Name="generate"
-            Margin="36,42,173.6,112.8"
+                <Button Name="generate"
             x:Uid="GenerateButton"
-            
-            Width="240">
+            >
             <Button.Background>
-                <ImageBrush ImageSource="assets/hotdog.jpg"/>
+                <ImageBrush  ImageSource="assets/hotdog.jpg"/>
             </Button.Background>
 
             <!--     <StackPanel>
@@ -42,10 +43,8 @@
         </Button>
 
         <Button Name="generate2"
-            Margin="36,247,173.6,232.6"
             x:Uid="GenerateButton"
-            
-            Width="240" Grid.RowSpan="2">
+             Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/wings.jpeg"/>
             </Button.Background>
