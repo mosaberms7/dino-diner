@@ -22,32 +22,28 @@
             <ColumnDefinition Width="164*"/>
         </Grid.ColumnDefinitions>
         <Button Name="combo"
-            x:Uid="GenerateButton"
             Click="Combo_Click" Grid.ColumnSpan="3" Margin="0,0,122,324.6" Grid.RowSpan="2">
             <Button.Background>
-                <ImageBrush ImageSource="assets/combo.jpg"/>
+                <ImageBrush ImageSource="PointOfSale/assets/combo.jpg"/>
             </Button.Background>
         </Button>
         <Button Name="Create_entree"
-            x:Uid="GenerateButton"
             Click="Create_entree_Click" Grid.Column="2" Margin="10.4,0,-10,9.8" Grid.ColumnSpan="2">
             <Button.Background>
-                <ImageBrush ImageSource="assets/entree.jpg"/>
+                <ImageBrush ImageSource="PointOfSale/assets/entree.jpg"/>
             </Button.Background>
         </Button>
 
         <Button Name="Create_drink"
-            x:Uid="GenerateButton"
             Click="Create_drink_Click" Margin="10.4,10.2,0,9.6" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2">
             <Button.Background>
-                <ImageBrush ImageSource="assets/drink.jpg"/>
+                <ImageBrush ImageSource="PointOfSale/assets/drink.jpg"/>
             </Button.Background>
         </Button>
         <Button Name="side"
-            x:Uid="GenerateButton"
             Click="Side_Click" Grid.ColumnSpan="3" Margin="0,10.2,122,9.6" Grid.Row="1">
             <Button.Background>
-                <ImageBrush ImageSource="assets/side.png"/>
+                <ImageBrush ImageSource="PointOfSale/assets/side.png"/>
             </Button.Background>
         </Button>
 

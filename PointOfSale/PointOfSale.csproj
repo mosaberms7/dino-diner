@@ -66,6 +66,9 @@
     <Compile Include="EntreeSelection2.xaml.cs">
       <DependentUpon>EntreeSelection2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenueCategorySelection.xaml.cs">
+      <DependentUpon>MenueCategorySelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
@@ -100,11 +103,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenueCategorySelection.xaml">
+    <Page Include="DrinkSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DrinkSelection.xaml">
+    <Page Include="MenueCategorySelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,9 +117,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenueCategorySelection.xaml.cs">
-      <DependentUpon>MenueCategorySelection.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,6 +139,7 @@
     <Resource Include="assets\l2.jpg" />
     <Resource Include="assets\m2.jpg" />
     <Resource Include="assets\ss.jpg" />
+    <Resource Include="assets\sst.jpg" />
     <Content Include="assets\van.jpeg" />
     <Content Include="assets\trex.jpg" />
     <None Include="Properties\Settings.settings">

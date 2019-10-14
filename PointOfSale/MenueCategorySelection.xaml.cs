@@ -24,12 +24,12 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-    
 
-    
 
-       
-       
+
+
+
+
         private void Create_drink_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new DrinkSelection());
