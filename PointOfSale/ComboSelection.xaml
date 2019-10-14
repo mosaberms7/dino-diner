@@ -1,0 +1,185 @@
+﻿<Page x:Class="PointOfSale.ComboSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="900"
+      Title="ComboSelection2">
+
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="Create_BrontowurstC"
+            Margin="36,42,173.6,112.8"
+            x:Uid="GenerateButton"
+            
+            Click="Create_BrontowurstC_Click" 
+            Width="240">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/hotdog.jpg"/>
+            </Button.Background>
+
+       <!--     <StackPanel>
+                <TextBlock >
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="30" />
+                        </Style>
+                    </TextBlock.Style><Run Text="Brontowurst"/></TextBlock>
+            </StackPanel>
+            -->
+
+        </Button>
+
+        <Button Name="Create_Pterodactyl_Wing"
+            Margin="36,247,173.6,232.6"
+            x:Uid="GenerateButton"
+            
+            Click="Create_Pterodactyl_Wing_Click" 
+            Width="240" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/wings.jpeg"/>
+            </Button.Background>
+
+          <!--<StackPanel>
+                <TextBlock>
+                <Run Text="Brokdsclkn"/>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="26" />
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+-->
+        </Button>
+        <Button Name="Create_Veloci_Wrap"
+            Margin="36,129.2,173.6,25.6"
+            x:Uid="GenerateButton"
+            Click="Create_Veloci_Wrap_Click" 
+            Width="240" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/wrap.jpg"/>
+            </Button.Background>
+
+       <!--<StackPanel>
+                <TextBlock>
+                <Run Text="Brokdsclkn"/>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="26" />
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+      
+            -->
+        </Button>
+
+
+
+        <Button Name="DIno_Nuggets"
+            Margin="339,42,321,112.8"
+            x:Uid="GenerateButton"
+            Click="DIno_Nuggets_Click"  Width="240" Height="170" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/nuggets.jpg"/>
+            </Button.Background>
+
+         <!--<StackPanel>
+                <TextBlock>
+                <Run Text="Brokdsclkn"/>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="26" />
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+                -->
+
+        </Button>
+
+        <Button Name="T_Rex_King_BurgerC"
+            Margin="289,222,271,208"
+            x:Uid="GenerateButton"
+            Click="TRex_King_BurgerC_Click"  Width="240" Height="170" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/burger.jpg"/>
+            </Button.Background>
+
+         <!--<StackPanel>
+                <TextBlock>
+                <Run Text="Brokdsclkn"/>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="26" />
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+            -->
+        </Button>
+
+        <Button Name="PB_AND_J"
+            Margin="176.4,42,34,112.8"
+            x:Uid="GenerateButton"
+            Click="PB_AND_J_Click"  Width="240" Height="170" Grid.Column="1">
+
+            <Button.Background>
+                <ImageBrush ImageSource="assets/pbj.jpeg"/>
+            </Button.Background>
+
+          <!--  <StackPanel>
+                <TextBlock>
+                <Run Text="Brokdsclkn"/>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="26" />
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+            -->
+
+        </Button>
+
+        <Button Name="Steakosarus_Burger"
+            Margin="176.4,222,34,208"
+            x:Uid="GenerateButton"
+            Click="Steakosarus_Burger_Click"  Width="240" Height="170" Grid.Column="1" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/burger2.jpg"/>
+            </Button.Background>
+
+        <!--<StackPanel>
+                <TextBlock>
+                <Run Text="Brokdsclkn"/>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="26" />
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+            -->
+
+        </Button>
+
+
+
+
+    </Grid>
+
+</Page>

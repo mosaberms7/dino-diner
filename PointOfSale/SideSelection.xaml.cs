@@ -18,9 +18,9 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for SideSelection.xaml
     /// </summary>
-    public partial class SideSelection : Page
+    public partial class SideSelection3 : Page
     {
-        public SideSelection()
+        public SideSelection3()
         {
             InitializeComponent();
         }

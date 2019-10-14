@@ -18,15 +18,18 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for SideSelection.xaml
     /// </summary>
-    public partial class SideSelection : Page
+    public partial class DrinkSelection : Page
     {
-        public SideSelection()
+        public DrinkSelection()
         {
             InitializeComponent();
         }
 
-        private void generate_Click(object sender, RoutedEventArgs e)
+       
+
+        private void Flavor_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new FlavorSelection());
 
         }
     }

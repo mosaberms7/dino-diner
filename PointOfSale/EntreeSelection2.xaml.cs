@@ -18,9 +18,9 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for MenuCategorySelection2.xaml
     /// </summary>
-    public partial class MenuCategorySelection2 : Page
+    public partial class EntreeSelection : Page
     {
-        public MenuCategorySelection2()
+        public EntreeSelection()
         {
             InitializeComponent();
         }
