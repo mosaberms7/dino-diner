@@ -23,8 +23,9 @@
         </Grid.ColumnDefinitions>
        
 
-                <Button Name="generate"
+                <Button Name="hotdog"
             x:Uid="GenerateButton"
+                        Margin="20,20"
             >
             <Button.Background>
                 <ImageBrush  ImageSource="assets/hotdog.jpg"/>
@@ -42,9 +43,11 @@
 
         </Button>
 
-        <Button Name="generate2"
+        <Button Name="wings"
             x:Uid="GenerateButton"
-             Grid.Row="1">
+             Grid.Row="1"
+         Margin="20,20"
+                >
             <Button.Background>
                 <ImageBrush ImageSource="assets/wings.jpeg"/>
             </Button.Background>
@@ -61,10 +64,11 @@
             </StackPanel>
 -->
         </Button>
-        <Button Name="generate3"
-            Margin="36,129.2,173.6,25.6"
+        <Button Name="wrap"
             x:Uid="GenerateButton"
-            Width="240" Grid.Row="1">
+                
+             Grid.Row="2"
+                Margin="20,20">
             <Button.Background>
                 <ImageBrush ImageSource="assets/wrap.jpg"/>
             </Button.Background>
@@ -85,10 +89,10 @@
 
 
 
-        <Button Name="generate21"
-            Margin="339,42,321,112.8"
+        <Button Name="nuggets"
             x:Uid="GenerateButton"
-            Width="240" Height="170" Grid.ColumnSpan="2">
+                Grid.Column="1"
+                Margin="20,20">
             <Button.Background>
                 <ImageBrush ImageSource="assets/nuggets.jpg"/>
             </Button.Background>
@@ -107,10 +111,11 @@
 
         </Button>
 
-        <Button Name="generate22"
-            Margin="289,222,271,208"
+        <Button Name="Trex"
             x:Uid="GenerateButton"
-            Width="240" Height="170" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20,20">
             <Button.Background>
                 <ImageBrush ImageSource="assets/burger.jpg"/>
             </Button.Background>
@@ -128,11 +133,11 @@
             -->
         </Button>
 
-        <Button Name="generate31"
-            Margin="176.4,42,34,112.8"
+        <Button Name="pbj"
             x:Uid="GenerateButton"
-          Width="240" Height="170" Grid.Column="1">
-
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="20,20">
             <Button.Background>
                 <ImageBrush ImageSource="assets/pbj.jpeg"/>
             </Button.Background>
@@ -151,10 +156,10 @@
 
         </Button>
 
-        <Button Name="generate32"
-            Margin="176.4,222,34,208"
+        <Button Name="steakburger"
             x:Uid="GenerateButton"
-           Width="240" Height="170" Grid.Column="1" Grid.RowSpan="2">
+                Grid.Column="2"
+                Margin="20,20">
             <Button.Background>
                 <ImageBrush ImageSource="assets/burger2.jpg"/>
             </Button.Background>

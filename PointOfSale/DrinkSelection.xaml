@@ -7,8 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="900"
       Title="SideSelection">
-    <Grid  Background="Black">
+    <Grid Background="Black">
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
 
@@ -17,13 +18,14 @@
             <ColumnDefinition/>
 
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Button Name="java"
-            Margin="36,43,173.6,151.8"
+                Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
-            Width="240" Height="130">
+        >
             <Button.Background>
                 <ImageBrush ImageSource="assets/java.jpg"/>
             </Button.Background>
@@ -31,40 +33,30 @@
 
 
         <Button Name="cola"
-            Margin="36,193,173.6,1.8"
+                Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
-            Width="240" Height="130">
+             Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/soda.jpg"/>
             </Button.Background>
         </Button>
 
         <Button Name="Tea"
-            Margin="36,21.2,173.6,173.6"
+                Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
-            Width="240" Height="130" Grid.Row="1">
+            Grid.Row="2">
             <Button.Background>
                 <ImageBrush ImageSource="assets/tea.jpg"/>
             </Button.Background>
         </Button>
 
-        <Button Name="water"
-            Margin="11,158,149,12"
-            x:Uid="GenerateButton"
-            
-
-            Width="240" Height="130" Grid.Row="1">
-            <Button.Background>
-                <ImageBrush ImageSource="assets/water.jpeg"/>
-            </Button.Background>
-        </Button>
-
         <RadioButton Name="SmallDrink"
-            Margin="339,42,321,112.8"
+           Margin="20.20,20"
             x:Uid="GenerateButton"
-              Width="240" Height="170" Grid.ColumnSpan="2">
+           Grid.Row="0" 
+           Grid.Column="1">
 
             <WrapPanel>
                 <TextBlock Foreground="Aquamarine">
@@ -80,9 +72,11 @@
 
         </RadioButton>
         <RadioButton Name="MeduimDrink"
-            Margin="289,222,271,208"
+             Margin="20.20,20"
+
             x:Uid="GenerateButton"
-             Width="240" Height="170" Grid.ColumnSpan="2" Grid.RowSpan="2">
+           Grid.Column="1"
+           Grid.Row="1">
             <WrapPanel>
                 <TextBlock Foreground="Aquamarine">
                     <Run Text="MEDUIM" />
@@ -97,9 +91,10 @@
         </RadioButton>
 
         <RadioButton Name="LargeDrink"
-            Margin="289,117,271,13"
-            x:Uid="GenerateButton"
-              Width="240" Height="170" Grid.ColumnSpan="2" Grid.Row="1">
+           Margin="20.20,20"
+            Uid="GenerateButton"
+            Grid.Column="1"
+                     Grid.Row="2">
             <WrapPanel>
                 <TextBlock Foreground="Aquamarine">
                     <Run Text="LARGE" />
@@ -114,20 +109,23 @@
         </RadioButton>
 
         <Button Name="Flavor"
-            Margin="176.4,42,34,112.8"
+                Margin="20,20"
             x:Uid="GenerateButton"
             Content=""
-            Click="Flavor_Click"  Width="240" Height="170" Grid.Column="1">
+            Click="Flavor_Click"  
+                Grid.Column="2"
+                Grid.Row="0">
             <Button.Background>
                 <ImageBrush ImageSource="assets/flavors.gif"/>
             </Button.Background>
         </Button>
 
         <Button Name="AddLemon"
-            Margin="176.4,222,34,208"
+                Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
-              Width="240" Height="170" Grid.Column="1" Grid.RowSpan="2">
+             Grid.Row="1"
+                Grid.Column="2" >
             <Button.Background>
                 <ImageBrush ImageSource="assets/lemon.jpg"/>
             </Button.Background>
@@ -135,10 +133,12 @@
 
 
         <Button Name="HoldIce"
-            Margin="176.4,117,34,13"
             x:Uid="GenerateButton"
+            Margin="10.20,10"
+
             Content=""
-              Width="240" Height="170" Grid.Row="1" Grid.Column="1">
+               Grid.Row="2"
+                Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="assets/noice.png"/>
             </Button.Background>

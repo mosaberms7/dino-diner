@@ -8,8 +8,9 @@
       d:DesignHeight="650" d:DesignWidth="900"
       Title="ComboSelection2">
 
-    <Grid Background="Black" >
+    <Grid Background="Black">
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
 
@@ -18,14 +19,14 @@
             <ColumnDefinition/>
 
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Button Name="Create_BrontowurstC"
-            Margin="36,42,173.6,112.8"
             x:Uid="GenerateButton"
-            
+            Margin="15,15"
             Click="Create_BrontowurstC_Click" 
-            Width="240">
+           >
             <Button.Background>
                 <ImageBrush ImageSource="assets/hotdog.jpg"/>
             </Button.Background>
@@ -43,11 +44,12 @@
         </Button>
 
         <Button Name="Create_Pterodactyl_Wing"
-            Margin="36,247,173.6,232.6"
+
             x:Uid="GenerateButton"
-            
+             Margin="15,15"
             Click="Create_Pterodactyl_Wing_Click" 
-            Width="240" Grid.RowSpan="2">
+                Grid.Row="1"
+           >
             <Button.Background>
                 <ImageBrush ImageSource="assets/wings.jpeg"/>
             </Button.Background>
@@ -65,10 +67,10 @@
 -->
         </Button>
         <Button Name="Create_Veloci_Wrap"
-            Margin="36,129.2,173.6,25.6"
             x:Uid="GenerateButton"
+                 Margin="15,15"
             Click="Create_Veloci_Wrap_Click" 
-            Width="240" Grid.Row="1">
+            Grid.Row="2">
             <Button.Background>
                 <ImageBrush ImageSource="assets/wrap.jpg"/>
             </Button.Background>
@@ -90,9 +92,10 @@
 
 
         <Button Name="DIno_Nuggets"
-            Margin="339,42,321,112.8"
             x:Uid="GenerateButton"
-            Click="DIno_Nuggets_Click"  Width="240" Height="170" Grid.ColumnSpan="2">
+            Margin="15,15"
+            Click="DIno_Nuggets_Click" 
+            Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/nuggets.jpg"/>
             </Button.Background>
@@ -112,9 +115,11 @@
         </Button>
 
         <Button Name="T_Rex_King_BurgerC"
-            Margin="289,222,271,208"
             x:Uid="GenerateButton"
-            Click="TRex_King_BurgerC_Click"  Width="240" Height="170" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            Click="TRex_King_BurgerC_Click" 
+                 Margin="15,15"
+                Grid.Column="1"
+                Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/burger.jpg"/>
             </Button.Background>
@@ -133,9 +138,11 @@
         </Button>
 
         <Button Name="PB_AND_J"
-            Margin="176.4,42,34,112.8"
             x:Uid="GenerateButton"
-            Click="PB_AND_J_Click"  Width="240" Height="170" Grid.Column="1">
+            Click="PB_AND_J_Click"
+                 Margin="15,15"
+                Grid.Column="2"
+                Grid.Row="0">
 
             <Button.Background>
                 <ImageBrush ImageSource="assets/pbj.jpeg"/>
@@ -156,9 +163,11 @@
         </Button>
 
         <Button Name="Steakosarus_Burger"
-            Margin="176.4,222,34,208"
             x:Uid="GenerateButton"
-            Click="Steakosarus_Burger_Click"  Width="240" Height="170" Grid.Column="1" Grid.RowSpan="2">
+            Click="Steakosarus_Burger_Click" 
+                 Margin="15,15"
+                Grid.Column="2"
+                Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="assets/burger2.jpg"/>
             </Button.Background>

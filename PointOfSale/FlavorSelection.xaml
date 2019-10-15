@@ -6,25 +6,27 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="900"
-      Title="ComboSelection2">
+      Title="FlavorSelection">
 
     <Grid  Background="Black">
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition/>
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Name="generate"
-            Margin="36,42,173.6,112.8"
-            x:Uid="GenerateButton"
+        <Button Name="cola"
+            Margin="20,20"
+            x:Uid="GenerateButton1"
             
-            Width="240">
+            >
             <Button.Background>
                 <ImageBrush ImageSource="assets/cola.jpg"/>
             </Button.Background>
@@ -41,11 +43,11 @@
 
         </Button>
 
-        <Button Name="generate2"
-            Margin="36,247,173.6,232.6"
-            x:Uid="GenerateButton"
-            
-            Width="240" Grid.RowSpan="2">
+        <Button Name="lemon"
+            Margin="20,20"
+            x:Uid="GenerateButton2"
+            Grid.Row="1"
+            >
             <Button.Background>
                 <ImageBrush ImageSource="assets/lime.jpg"/>
             </Button.Background>
@@ -62,10 +64,10 @@
             </StackPanel>
 -->
         </Button>
-        <Button Name="generate3"
-            Margin="36,129.2,173.6,25.6"
-            x:Uid="GenerateButton"
-            Width="240" Grid.Row="1">
+        <Button Name="orange"
+            Margin="20,20"
+            x:Uid="GenerateButton3"
+             Grid.Row="2">
             <Button.Background>
                 <ImageBrush ImageSource="assets/orange.png"/>
             </Button.Background>
@@ -86,10 +88,12 @@
 
 
 
-        <Button Name="generate21"
-            Margin="339,42,321,112.8"
-            x:Uid="GenerateButton"
-             Width="240" Height="170" Grid.ColumnSpan="2">
+        <Button Name="cherry"
+            Margin="20,20"
+            x:Uid="GenerateButton4"
+             Grid.Row="0"
+                Grid.Column="1"
+                >
             <Button.Background>
                 <ImageBrush ImageSource="assets/cherry.jpg"/>
             </Button.Background>
@@ -108,10 +112,12 @@
 
         </Button>
 
-        <Button Name="generate22"
-            Margin="289,222,271,208"
-            x:Uid="GenerateButton"
-              Width="240" Height="170" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <Button Name="rootbeer"
+            Margin="20,20"
+            x:Uid="GenerateButton5"
+             Grid.Row="1"
+                Grid.Column="1"
+                >
             <Button.Background>
                 <ImageBrush ImageSource="assets/rb.jpg"/>
             </Button.Background>
@@ -129,10 +135,11 @@
             -->
         </Button>
 
-        <Button Name="generate31"
-            Margin="176.4,42,34,112.8"
-            x:Uid="GenerateButton"
-              Width="240" Height="170" Grid.Column="1">
+        <Button Name="choco"
+            Margin="20,20"
+            x:Uid="GenerateButton6"
+               Grid.Column="2"
+               >
 
             <Button.Background>
                 <ImageBrush ImageSource="assets/choco.jpg"/>
@@ -152,12 +159,13 @@
 
         </Button>
 
-        <Button Name="generate32"
-            Margin="176.4,222,34,208"
+        <Button Name="vanilla"
+            Margin="20,20"
             x:Uid="GenerateButton"
-              Width="240" Height="170" Grid.Column="1" Grid.RowSpan="2">
-            <Button.Background>
-                <ImageBrush ImageSource="assets/van.jpeg"/>
+              Grid.Column="2" 
+                Grid.Row="1">
+       <Button.Background>
+                <ImageBrush ImageSource="assets/VANILLA.jpeg"/>
             </Button.Background>
 
             <!--<StackPanel>
