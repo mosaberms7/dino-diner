@@ -6,17 +6,30 @@ using System.Text;
 //using DinoDiner.Menu.Menue;
 using DinoDiner.Menu;
 //using DinoDiner.Menu.Drinks;
-
+using System.ComponentModel;
 
 
 namespace DinoDiner.Menu
 {
-    public class cretaceousecombo : MenuItem
+    public class cretaceousecombo : MenuItem, INotifyPropertyChanged
     {
        
 
         private Size size = Size.Small;
-        public Entree Entree { get; set; }
+        public Entree Entree { get
+            { return Entree; }
+            protected set
+            {
+                Entree = value;
+                Entree.PropertyChanged+=(object sender ,PropertyChangedEventArgs args ) =>
+                    {
+                    NotifiyPropertyChanged(args.PropertyName);
+
+
+                    };
+                    
+            }
+        }
         public Side side {
             get
             {
@@ -28,19 +41,39 @@ namespace DinoDiner.Menu
                 side.Size = size;
             }
                          }
-    public Drink drink { get; set; }
-    public double Price {
+        private Drink drink = new Sodasaurus();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        
+
+        public double Price
+        {
             get
-               {
+            {
                 return (Entree.Price + side.Price + drink.Price- 0.25);
-                }
+            }
             
-            
+        }
+
+        public Size size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
 
 
-      }
 
-    
+            }
+
+
+        }
+
+        protected void NotifiyPropertyChanged(String Prop);
     public  List<string> Ingredients
     {
         get
@@ -60,11 +93,32 @@ namespace DinoDiner.Menu
             side = new Fryceritops();
             drink = new Sodasaurus();
         }
-        public virtual void ToString()
+        public virtual string ToString()
         {
-            Console.WriteLine("");
+            return "";
 
+        }
+        public string Description
+        {
 
+            get{
+                return this.ToString();
+            }
+
+        }
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                special.AddRange(Entree.Special);
+                special.Add(Side.Description);
+                special.AddRange(Side.Special);
+                special.Add(Drink.description);
+                special.AddRange(Drink.Special);
+
+            }
         }
 
 

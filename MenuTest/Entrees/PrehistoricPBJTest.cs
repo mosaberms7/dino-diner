@@ -46,6 +46,60 @@ namespace MenuTest.Entrees
             pbj.HoldJelly();
             Assert.DoesNotContain<string>("Jelly", pbj.Ingredients);
         }
+        [Fact]
+        public void DescriptionShouldBecorrect()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Equal("Prehistoric PB&J", pbj.Description);
+        }
+        [Fact]
+        public void SpecialShouldBecorrect()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Empty(pbj.Special);
+        }
+        [Fact]
+        public void HoldPeanutButterShouldAddtoSpecial()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Contains("Hold Peanut Butter", pbj.Special);
+        }
+        [Fact]
+        public void HoldJellyShouldAddtoSpecial()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Contains("Hold Jelly", pbj.Special);
+        }
+        [Fact]
+       public void HoldJellyadnBenautButterShouldAddtoSpecial()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldJelly();
+            pbj.HoldPeanutButter();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Peanut Butter", item);
+
+
+                },
+                 item =>
+                 {
+                     Assert.Equal("Hold Jelly", item);
+      }
+                );
+        }
+        [Fact]
+        public void HoldingPeanutButterandJellyShouldNotifySpecialChange()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+              {
+                  pbj.HoldPeanutButter();
+  
+              });
+        }
+
     }
 
 }

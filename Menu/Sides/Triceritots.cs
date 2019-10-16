@@ -76,7 +76,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return "Mezzorella-Sticks";
+            return $"{size} Triceritots";
         }
 
     }
