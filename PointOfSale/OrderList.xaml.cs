@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
     /// <summary>
     /// Interaction logic for OrderList.xaml
     /// </summary>
-    public partial class OrderList : Page
+    public partial class OrderList 
     {
         public OrderList()
         {

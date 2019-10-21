@@ -23,6 +23,8 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            Order order = new Order();
+            order.Items.add(new prehistr)
         }
     }
 }
