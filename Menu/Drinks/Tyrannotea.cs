@@ -109,7 +109,10 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return "Tyranno-tea";
+            if (Sweet)
+                return $"{size} Sweet Tyrannotea";
+            else 
+                return $"{size} Tyrannotea";
 
         }
     }

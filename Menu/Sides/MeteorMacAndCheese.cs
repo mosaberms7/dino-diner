@@ -72,7 +72,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return "Meteor-Mac-And-Cheese";
+            return $"{size} Meteor Mac and Cheese";
 
         }
 

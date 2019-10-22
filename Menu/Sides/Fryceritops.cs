@@ -72,7 +72,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return "Fryceritops";
+            return $"{ size} Fryceritops";
 
         }
 

@@ -25,7 +25,7 @@ namespace DinoDiner.Menu
 
    
 
-    public abstract  class Drink  : MenuItem
+    public abstract  class Drink  : MenuItem,IOrderItem
     {
         /// <summary>
         /// setter and getter fot the Price property
@@ -49,6 +49,26 @@ namespace DinoDiner.Menu
         /// Ice property
         /// </summary>
         public virtual bool Ice { get; set; }
+
+        public virtual string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+       private string[] special;
+        public virtual string[] Special
+        {
+           
+            get
+            {
+                
+                special[0]= " ";
+                return special;
+            }
+        }
+
         /// <summary>
         /// methode to hold the ice , set the ice property to false
         /// </summary>
@@ -65,5 +85,6 @@ namespace DinoDiner.Menu
 
 
         }
+       
     }
 }

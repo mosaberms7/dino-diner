@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink,IOrderItem
     {
         private Size size;
         /// <summary>
@@ -20,7 +20,7 @@ namespace DinoDiner.Menu
         /// the calories to 2
         /// the ice to false, the roomforcream to false, the decaf to false
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             this.Price = 0.59;
             this.Calories = 2;
@@ -98,11 +98,32 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        private string[] special;
+        public override string[] Special
+        {
 
+            get
+            {
+                if(Sweet)
+                special[0] = "Sweet";
+                if (Decaf)
+                    special[1] = "Decaf";
+                return special;
+            }
+        }
         public override string ToString()
         {
-            return "Jurrasic-Java";
-
+            if(Decaf)
+            return $"{size} Decaf Jurassic Java";
+            else 
+                return $"{size} Jurassic Java";
 
         }
 

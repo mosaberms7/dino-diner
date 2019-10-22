@@ -6,10 +6,40 @@ namespace DinoDiner.Menu
 {
     public class Water : Drink
     {
+        private Size size;
+
         /// <summary>
         /// setter and getter for the lemon property
         /// </summary>
         public bool Lemon { get; set; }
+        public override Size Size
+        {
+
+            set
+            {
+                size = value;
+                switch (value)
+                {
+                    case Size.Small:
+                        this.Price = 0.10;
+                        break;
+                    case Size.Medium:
+                        this.Price = 0.10;
+                        
+                        break;
+                    case Size.Large:
+                        this.Price = 0.10;
+                        break;
+
+
+                }
+            }
+            get
+            {
+                return size;
+            }
+        }
+
 
         /// <summary>
         /// constructs anew instance of WAter with
@@ -50,7 +80,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return "water";
+            return $"{size} Water";
 
         }
     }

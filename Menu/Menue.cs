@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<MenuItem> availableMenuItems = new List<MenuItem>();
-                availableMenuItems.Add(new JurrasicJava());
+                availableMenuItems.Add(new JurassicJava());
                 availableMenuItems.Add(new Sodasaurus());
                 availableMenuItems.Add(new Tyrannotea());
                 availableMenuItems.Add(new TRexKingBurger());
@@ -68,7 +68,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<Drink> availableDrinks = new List<Drink>();
-                availableDrinks.Add(new JurrasicJava());
+                availableDrinks.Add(new JurassicJava());
                 availableDrinks.Add(new Sodasaurus());
                 availableDrinks.Add(new Tyrannotea());
                 availableDrinks.Add(new Water());
@@ -81,7 +81,7 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return
-             new JurrasicJava().ToString() + " \n" + new Sodasaurus().ToString()
+             new JurassicJava().ToString() + " \n" + new Sodasaurus().ToString()
              + '\n' + new Tyrannotea().ToString() + '\n' + new Water().ToString()
              + '\n' + new Fryceritops().ToString() + '\n' + new MeteorMacAndCheese().ToString()+'\n'
              + new MezzorellaSticks().ToString()+'\n'+new Triceritots().ToString()+'\n'+ new DinoNuggets().ToString()+'\n'

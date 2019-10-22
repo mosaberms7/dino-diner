@@ -58,7 +58,7 @@ namespace DinoDiner.Menu
     
         public override string ToString()
         {
-            return "PrehistoricPBJ";
+            return "Prehistoric PB&J";
 
         }
 

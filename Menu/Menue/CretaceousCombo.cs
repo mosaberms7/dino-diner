@@ -11,7 +11,7 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    public class cretaceousecombo : MenuItem
+    public class CretaceousCombo : MenuItem
     {
        
 
@@ -55,15 +55,14 @@ namespace DinoDiner.Menu
     }
 
     public uint Calories { get { return Entree.Calories + side.Calories + drink.Calories;  }    }
-    public cretaceousecombo(Entree e) {
+    public CretaceousCombo(Entree e) {
             this.Entree = e;
             side = new Fryceritops();
             drink = new Sodasaurus();
         }
-        public virtual void ToString()
+        public virtual string ToString()
         {
-            Console.WriteLine("");
-
+            return "CretaceousCombo";
 
         }
 
