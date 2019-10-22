@@ -12,19 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Order.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Order 
     {
-        public MainWindow()
+        public Order()
         {
             InitializeComponent();
-            Order order = new Order();
-            order.Items.add(new prehistr)
+
+
         }
+     //   public List<object> Items { }
+
+
+        //stuff missing here
+       
+        
     }
 }

@@ -1,16 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using System;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// 
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
     {
         private bool peanutButter = true;
         private bool jelly = true;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string PropertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+        }
         /// <summary>
         /// settter and getter of the price property
         /// </summary>
@@ -47,6 +56,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("");
         }
         /// <summary>
         /// A methode to hold the Jelly and sets the Jelly field to False 
@@ -59,8 +70,32 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Prehistoric PB&J";
+<<<<<<< HEAD
+=======
 
         }
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
+                if (!peanutButter) special.Add("Hold Peanut Buttter");
+                if (!jelly) special.Add("Hold Jelly");
+                return special.ToArray();
+>>>>>>> 071f9f15c4d0254fc0dcdaee49d44aa69032f37c
 
+            }
+        }
+        public string Description
+        {
+            get {
+                return this.ToString();
+            }
+
+
+        }
     }
+
+
+    
 }

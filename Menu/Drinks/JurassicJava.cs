@@ -120,10 +120,16 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
+<<<<<<< HEAD:Menu/Drinks/JurassicJava.cs
             if(Decaf)
             return $"{size} Decaf Jurassic Java";
             else 
                 return $"{size} Jurassic Java";
+=======
+            if(Decaf) return $"{this.size} Decaf Jurassic Java";
+           else return $"{this.size} Jurassic Java";
+
+>>>>>>> 071f9f15c4d0254fc0dcdaee49d44aa69032f37c:Menu/Drinks/JurrasicJava.cs
 
         }
 

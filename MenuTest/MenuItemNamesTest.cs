@@ -123,7 +123,7 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurassicJava java = new JurassicJava();
+            JurrasicJava java = new JurrasicJava();
             java.Size = size;
             java.Decaf = decaf;
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
@@ -203,7 +203,7 @@ namespace MenuTest
         public void ToStringShouldGiveName(Type type, string name)
         {
             Entree entree = (Entree)Activator.CreateInstance(type);
-            CretaceousCombo combo = new CretaceousCombo(entree);
+            cretaceousecombo combo = new cretaceousecombo(entree);
             Assert.Equal(name, combo.ToString());
         }
 
