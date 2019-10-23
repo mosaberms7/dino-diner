@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 //using DinoDiner.Menu.Drinks;
 //using MenuTest.Drinks;
 
 namespace DinoDiner.Menu
 {
    
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink,IOrderItem,INotifyPropertyChanged
     {
 
         private Size size;
@@ -24,10 +25,29 @@ namespace DinoDiner.Menu
         /// <summary>
         /// the setter and getter of the sodasaurseFlavor property
         /// </summary>
+        public override void HoldIce()
+        {
+            base.HoldIce();
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ice");
+
+
+        }
+        /// <summary>
+        /// flavor property
+        /// </summary>
         public  SodasaurusFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Flavor");
+
+
+
+            }
         }
         /// <summary>
         ///setter and getter for the Size property 
@@ -38,6 +58,10 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
                 switch (value)
                 {
                     case Size.Small:
@@ -78,10 +102,55 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        /// <summary>
+        /// return the size, name and the flavor of the drink
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{size} {flavor} Sodasaurus";
 
+        }
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
+                if (!Ice)
+                    special.Add("Hold Ice");
+
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+
+
+        }
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
 

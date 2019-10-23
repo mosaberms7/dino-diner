@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using DinoDiner.Menu;
+using System.ComponentModel;
+
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -7,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// a class representing  an entree plaate 
     /// </summary>
-   public class TRexKingBurger : Entree
+   public class TRexKingBurger : Entree,IOrderItem,INotifyPropertyChanged
     {
         private bool whole_wheat_bun = true;
         private bool Lettuce = true;
@@ -63,6 +66,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.whole_wheat_bun = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// A methode to hold the Pickle and sets the Pickle field to False 
@@ -71,6 +76,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.Pickle = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// A methode to hold the Ketchup and sets the Ketchup field to False 
@@ -78,6 +85,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.Ketchup = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// A methode to hold the Mustard and sets the Mustard field to False 
@@ -85,6 +94,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.Mustard = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// A methode to hold the Tomato and sets the Tomato field to False 
@@ -92,6 +103,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// A methode to hold the Onion and sets the Onion field to False 
@@ -99,6 +112,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.Onion = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// A methode to hold the Lettuce and sets the Lettuce field to False 
@@ -106,6 +121,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.Lettuce = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         ///  A methode to hold the Mayo and sets the Mayo field to False 
@@ -113,12 +130,63 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.Mayo = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         public override string ToString()
         {
             return "T-Rex King Burger";
 
         }
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
+                if (!Pickle) special.Add("Hold Pickle");
+                if (!Ketchup) special.Add("Hold Ketchup");
+                if (!Mustard) special.Add("Hold Mustard");
+                if (!whole_wheat_bun) special.Add("Hold Whole Wheat Bun");
+                if (!Lettuce) special.Add("Hold Lettuce");
+                if (!Onion) special.Add("Hold Onion");
+                if (!Mayo) special.Add("Hold Mayo");
+                if (!tomato) special.Add("Hold Tomato");
+
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
 
 
     }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace DinoDiner.Menu
 {
-    public class JurassicJava : Drink,IOrderItem
+    public class JurassicJava : Drink,IOrderItem,INotifyPropertyChanged
     {
         private Size size;
         /// <summary>
@@ -28,6 +30,20 @@ namespace DinoDiner.Menu
             this.RoomForCream = false;
             this.Decaf = false;
         }
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
         /// <summary>
         /// setter and getter for the RommForCream property
         /// </summary>
@@ -35,7 +51,23 @@ namespace DinoDiner.Menu
         /// <summary>
         /// setter and getter for the Decaf property
         /// </summary>
-        public bool Decaf { get; set; }
+        private bool decaf;
+        public bool Decaf
+        {
+            get
+            {
+                return decaf;
+            }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Decaf");
+                NotifyOfPropertyChanged("Description");
+
+
+
+            }
+        }
         /// <summary>
         /// A methode to set the roomforcream propertu to true
         /// </summary>
@@ -49,6 +81,12 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ice");
+
+
+
+
         }
         /// <summary>
         /// setter and getter for the size property
@@ -59,6 +97,10 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
                 switch (value)
                 {
                     case Size.Small:
@@ -73,7 +115,6 @@ namespace DinoDiner.Menu
                         this.Price = 1.49;
                         this.Calories = 8;
                         break;
-
 
                 }
             }
@@ -105,31 +146,33 @@ namespace DinoDiner.Menu
                 return this.ToString();
             }
         }
-        private string[] special;
         public override string[] Special
         {
 
             get
             {
-                if(Sweet)
-                special[0] = "Sweet";
-                if (Decaf)
-                    special[1] = "Decaf";
-                return special;
+                List<string> special = new List<string>();
+
+                if (!Sweet)
+                    special.Add("Hold Sweet");
+                if (!Decaf)
+                    special.Add("Hold Decaf");
+                if (Ice)
+                    special.Add("Add Ice");
+                return special.ToArray();
             }
         }
+        /// <summary>
+        /// return the name of the side the size 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-<<<<<<< HEAD:Menu/Drinks/JurassicJava.cs
             if(Decaf)
-            return $"{size} Decaf Jurassic Java";
+                return $"{size} Decaf Jurassic Java";
             else 
                 return $"{size} Jurassic Java";
-=======
-            if(Decaf) return $"{this.size} Decaf Jurassic Java";
-           else return $"{this.size} Jurassic Java";
 
->>>>>>> 071f9f15c4d0254fc0dcdaee49d44aa69032f37c:Menu/Drinks/JurrasicJava.cs
 
         }
 

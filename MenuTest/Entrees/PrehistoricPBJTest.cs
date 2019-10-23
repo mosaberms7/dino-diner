@@ -62,12 +62,14 @@ namespace MenuTest.Entrees
         public void HoldPeanutButterShouldAddtoSpecial()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldPeanutButter();
             Assert.Contains("Hold Peanut Butter", pbj.Special);
         }
         [Fact]
         public void HoldJellyShouldAddtoSpecial()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldJelly();
             Assert.Contains("Hold Jelly", pbj.Special);
         }
         [Fact]

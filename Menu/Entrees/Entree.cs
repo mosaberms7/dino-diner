@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// an abstract class with 3 properties
     /// </summary>
-   public abstract class  Entree : MenuItem
+   public abstract class  Entree : MenuItem,IOrderItem
     {
         /// <summary>
         /// setter and getter fot the Price property
@@ -30,7 +30,19 @@ namespace DinoDiner.Menu
 
 
         }
-      
+        /// <summary>
+        /// return the description of the entree
+        /// </summary>
+       
+        public virtual string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
+        public virtual  string[] Special { get; }
+
 
     }
 }

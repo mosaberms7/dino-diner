@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu;
+using System.ComponentModel;
+
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class representing a Entree plate
     /// </summary>
-   public class SteakosaurusBurger : Entree
+   public class SteakosaurusBurger : Entree,IOrderItem,INotifyPropertyChanged
     {
         private bool whole_wheat_bun = true;
         private bool steakburger_pattie = true;
@@ -52,6 +55,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.whole_wheat_bun = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         ///  A methode to hold the Pickle and sets the  Pickle field to False 
@@ -59,6 +64,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         ///  A methode to hold the Ketchup and sets the Ketchup field to False 
@@ -66,6 +73,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         ///  A methode to hold the Mustard and sets the Mustard field to False 
@@ -73,11 +82,55 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         public override string ToString()
         {
             return "Steakosaurus Burger";
 
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!steakburger_pattie) special.Add("Hold Steakburger Pattie");
+                if (!whole_wheat_bun) special.Add("Hold Whole Wheat Bun");
+
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

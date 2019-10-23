@@ -61,6 +61,58 @@ namespace MenuTest
             VelociWrap vw = new VelociWrap();
             Assert.Equal("Veloci-Wrap", vw.ToString());
         }
+        /**************************************************/
+        [Fact]
+        public void BrontowurstDescriptionShouldGiveName()
+        {
+            Brontowurst bw = new Brontowurst();
+            Assert.Equal("Brontowurst", bw.Description);
+        }
+
+
+        [Fact]
+        public void DinoNuggetDescriptionShouldGiveName()
+        {
+
+            DinoNuggets dn = new DinoNuggets();
+            Assert.Equal("Dino-Nuggets", dn.Description);
+        }
+
+
+        [Fact]
+        public void PrehistoricPBJDescriptionShouldGiveName()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Equal("Prehistoric PB&J", pbj.Description);
+        }
+
+        [Fact]
+        public void PterodactylWingsDescriptionShouldGiveName()
+        {
+            PterodactylWings pw = new PterodactylWings();
+            Assert.Equal("Pterodactyl Wings", pw.Description);
+        }
+
+        [Fact]
+        public void SteakosaurusBurgerDescriptionShouldGiveName()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.Equal("Steakosaurus Burger", sb.Description);
+        }
+
+        [Fact]
+        public void TRexKingBurgerDescriptionShouldGiveName()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.Equal("T-Rex King Burger", trex.Description);
+        }
+
+        [Fact]
+        public void VelociWrapDescriptionShouldGiveName()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.Equal("Veloci-Wrap", vw.Description);
+        }
 
         #endregion
 
@@ -123,7 +175,8 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
+
             java.Size = size;
             java.Decaf = decaf;
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
@@ -203,8 +256,8 @@ namespace MenuTest
         public void ToStringShouldGiveName(Type type, string name)
         {
             Entree entree = (Entree)Activator.CreateInstance(type);
-            cretaceousecombo combo = new cretaceousecombo(entree);
-            Assert.Equal(name, combo.ToString());
+            CretaceousCombo combo = new CretaceousCombo(entree);
+            Assert.Equal("DinoDiner.Menu."+name, combo.ToString());
         }
 
         #endregion

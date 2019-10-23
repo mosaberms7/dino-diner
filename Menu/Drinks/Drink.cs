@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace DinoDiner.Menu
 {
@@ -58,17 +60,20 @@ namespace DinoDiner.Menu
             }
         }
        private string[] special;
+
+
         public virtual string[] Special
         {
            
             get
             {
-                
-                special[0]= " ";
-                return special;
+                List<string> special = new List<string>();
+
+                return special.ToArray();
+
             }
         }
-
+      
         /// <summary>
         /// methode to hold the ice , set the ice property to false
         /// </summary>

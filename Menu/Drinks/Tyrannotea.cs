@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink,IOrderItem,INotifyPropertyChanged
     {
         private Size size;
         /// <summary>
@@ -40,6 +41,12 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
+
+
                 switch (value)
                 {
                     case Size.Small:
@@ -69,6 +76,10 @@ namespace DinoDiner.Menu
         public void AddLemon() {
 
             this.Lemon = true;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Lemon");
+
+
         }
         /// <summary>
         /// amethode to add sweet
@@ -76,6 +87,11 @@ namespace DinoDiner.Menu
         public void AddSweet()
         {
             this.Sweet = true;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Calories");
+            NotifyOfPropertyChanged("Sweet");
+
+
             this.Calories *= 2;
         }
         /// <summary>
@@ -87,6 +103,9 @@ namespace DinoDiner.Menu
             {
                 this.Sweet = false;
                 this.Calories /= 2;
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Sweet");
             }
         }
         /// <summary>
@@ -106,19 +125,59 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// the name and the size of the drink
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-<<<<<<< HEAD
             if (Sweet)
                 return $"{size} Sweet Tyrannotea";
             else 
                 return $"{size} Tyrannotea";
-=======
-            if (Sweet) return $"{size} Sweet Tyrannotea";
-            else return $"{size} Tyrannotea";
->>>>>>> 071f9f15c4d0254fc0dcdaee49d44aa69032f37c
 
+        }
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
+                if (!Lemon)
+                    special.Add("Add Lemon");
+                if (Sweet)
+                    special.Add("Add Sweet");
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+
+
+        }
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

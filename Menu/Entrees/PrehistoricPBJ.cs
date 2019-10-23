@@ -2,6 +2,8 @@
 using System.Text;
 using System;
 using System.ComponentModel;
+using DinoDiner.Menu;
+
 
 namespace DinoDiner.Menu
 {
@@ -57,7 +59,6 @@ namespace DinoDiner.Menu
         {
             this.peanutButter = false;
             NotifyOfPropertyChanged("Special");
-            NotifyOfPropertyChanged("");
         }
         /// <summary>
         /// A methode to hold the Jelly and sets the Jelly field to False 
@@ -65,27 +66,35 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChanged("Special");
+
         }
-    
+        /// <summary>
+        /// <returns>Returns the name of the Entree.</returns>
+        /// </summary>
+
         public override string ToString()
         {
             return "Prehistoric PB&J";
-<<<<<<< HEAD
-=======
 
         }
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
         public string[] Special
         {
             get
             {
                 List<String> special = new List<string>();
-                if (!peanutButter) special.Add("Hold Peanut Buttter");
+                if (!peanutButter) special.Add("Hold Peanut Butter");
                 if (!jelly) special.Add("Hold Jelly");
                 return special.ToArray();
->>>>>>> 071f9f15c4d0254fc0dcdaee49d44aa69032f37c
 
             }
         }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
         public string Description
         {
             get {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 
 namespace DinoDiner.Menu
@@ -9,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// a class representing a side plate with 3 ingrediants using string
     /// </summary>
-    public class Triceritots : Side
+    public class Triceritots : Side,IOrderItem,INotifyPropertyChanged
     {
         private Size size;
         /// <summary>
@@ -32,6 +33,10 @@ namespace DinoDiner.Menu
 
             set
             {
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
                 size = value;
                 switch (value)
                 {
@@ -74,9 +79,53 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        /// <summary>
+        /// return the size and the name of the side
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{size} Triceritots";
+        }
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
+
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
     }

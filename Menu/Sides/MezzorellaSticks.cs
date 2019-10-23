@@ -1,15 +1,14 @@
 ﻿using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
-using DinoDiner.Menu;
 using System.Text;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// a class representing a side plate with 3 ingrediants using string
     /// </summary>
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side,IOrderItem,INotifyPropertyChanged
     {
         private Size size;
         /// <summary>
@@ -32,6 +31,12 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
+
+
                 switch (value)
                 {
                     case Size.Small:
@@ -73,12 +78,55 @@ namespace DinoDiner.Menu
 
             }
         }
+        /// <summary>
+        /// return the name and the size of the side
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{size} Mezzorella Sticks";
 
         }
 
+        /// <summary>
+        /// A list of special instructions to be used during Entree preparation.
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<String> special = new List<string>();
 
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
+        /// Gets the description of the Entree.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// The event handler that handles if any properties of the combo were changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// An accessor method for invoking a property change.
+        /// </summary>
+        /// <param name="name">The name of the property being changed.</param>
+        protected void NotifyOfPropertyChanged(string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }
