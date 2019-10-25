@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -24,7 +25,10 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order order = new Order();
-            order.Items.add(new prehistr)
+            OrderInterFace
+            order.items.add(new PrehistoricPBJ());
+            order.Navigationservice = OrderInterface.NavigationService;
         }
+        public void OnLoadComplete(object sender,NavigationService navigationService) { }
     }
 }

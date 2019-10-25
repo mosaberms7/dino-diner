@@ -19,8 +19,9 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for OrderList.xaml
     /// </summary>
-    public partial class OrderList :UserControl
+    public partial class OrderList : UserControl
     {
+        public NavigationService navigationService { get; set; }
         public NavigationService navigation;
         public OrderList()
         {
@@ -35,12 +36,13 @@ namespace PointOfSale
                 {
                     if (element.DataContext is IOrderItem item)
                     {
-                        order..Remove(item);
+                        order.Remove(item);
                     }
 
                 }
 
             }
         }
+        private void (){}
     }
 }

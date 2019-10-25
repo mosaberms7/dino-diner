@@ -59,9 +59,9 @@
                                 Foreground="White">X
                             </Button>
                         <ListBox ItemsSource="{Binding Path=Ingredients}" BorderBrush="White"/>
-                        
 
 
+                            </Grid>
 
                     </StackPanel>
                 </DataTemplate>
