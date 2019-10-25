@@ -19,11 +19,28 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for OrderList.xaml
     /// </summary>
-    public partial class OrderList 
+    public partial class OrderList :UserControl
     {
+        public NavigationService navigation;
         public OrderList()
         {
             InitializeComponent();
+        }
+
+        private void remove(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is FrameworkElement element)
+                {
+                    if (element.DataContext is IOrderItem item)
+                    {
+                        order..Remove(item);
+                    }
+
+                }
+
+            }
         }
     }
 }
