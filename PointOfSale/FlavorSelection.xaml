@@ -23,6 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <Button Name="cola"
+                Click="Cola_Click"
             Margin="20,20"
             x:Uid="GenerateButton1"
             
@@ -44,7 +45,8 @@
         </Button>
 
         <Button Name="lemon"
-            Margin="20,20"
+                Click="Lemon_Click"
+                Margin="20,20"
             x:Uid="GenerateButton2"
             Grid.Row="1"
             >
@@ -65,7 +67,8 @@
 -->
         </Button>
         <Button Name="orange"
-            Margin="20,20"
+                Click="Orange_Click"
+                Margin="20,20"
             x:Uid="GenerateButton3"
              Grid.Row="2">
             <Button.Background>
@@ -89,6 +92,7 @@
 
 
         <Button Name="cherry"
+                Click="Cherry_Click"
             Margin="20,20"
             x:Uid="GenerateButton4"
              Grid.Row="0"
@@ -113,7 +117,8 @@
         </Button>
 
         <Button Name="rootbeer"
-            Margin="20,20"
+                 Click="Rootbeer_Click"
+                Margin="20,20"
             x:Uid="GenerateButton5"
              Grid.Row="1"
                 Grid.Column="1"
@@ -136,7 +141,8 @@
         </Button>
 
         <Button Name="choco"
-            Margin="20,20"
+                Click="Choco_Click"
+                Margin="20,20"
             x:Uid="GenerateButton6"
                Grid.Column="2"
                >
@@ -160,7 +166,8 @@
         </Button>
 
         <Button Name="vanilla"
-            Margin="20,20"
+                 Click="Vanilla_Click"       
+                Margin="20,20"
             x:Uid="GenerateButton"
               Grid.Column="2" 
                 Grid.Row="1">

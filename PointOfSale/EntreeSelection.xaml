@@ -24,6 +24,7 @@
        
 
                 <Button Name="hotdog"
+                        Click="Hotdog_Click"
             x:Uid="GenerateButton"
                         Margin="20,20"
             >
@@ -44,6 +45,7 @@
         </Button>
 
         <Button Name="wings"
+                Click="Wings_Click"
             x:Uid="GenerateButton"
              Grid.Row="1"
          Margin="20,20"
@@ -65,6 +67,7 @@
 -->
         </Button>
         <Button Name="wrap"
+                Click="Wrap_Click"
             x:Uid="GenerateButton"
                 
              Grid.Row="2"
@@ -90,6 +93,7 @@
 
 
         <Button Name="nuggets"
+                Click="Nuggets_Click"
             x:Uid="GenerateButton"
                 Grid.Column="1"
                 Margin="20,20">
@@ -112,6 +116,7 @@
         </Button>
 
         <Button Name="Trex"
+                Click="Trex_Click"
             x:Uid="GenerateButton"
                 Grid.Row="1"
                 Grid.Column="1"
@@ -134,6 +139,7 @@
         </Button>
 
         <Button Name="pbj"
+                Click="Pbj_Click"
             x:Uid="GenerateButton"
                 Grid.Row="1"
                 Grid.Column="2"
@@ -157,6 +163,7 @@
         </Button>
 
         <Button Name="steakburger"
+                Click="Steakburger_Click"
             x:Uid="GenerateButton"
                 Grid.Column="2"
                 Margin="20,20">

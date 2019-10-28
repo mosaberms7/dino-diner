@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -23,6 +24,68 @@ namespace PointOfSale
         public EntreeSelection()
         {
             InitializeComponent();
+            this.ShowsNavigationUI = false;
+            this.DataContext = this;
+        }
+
+        private void Hotdog_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new Brontowurst());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+        }
+
+        private void Nuggets_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new DinoNuggets());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+        }
+
+        private void Trex_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new TRexKingBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+        }
+
+        private void Steakburger_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new SteakosaurusBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+        }
+
+        private void Wings_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new PterodactylWings());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+        }
+
+        private void Pbj_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new PrehistoricPBJ());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+
+        }
+
+        private void Wrap_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem(new VelociWrap());
+            NavigationService.Navigate(new MenuCategorySelection());
+
+
+
+        }
+        private void AddItem(Entree entree)
+        {
+            if (DataContext is Order order)
+            {
+                order.Items.Add(entree);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+            }
         }
     }
 }

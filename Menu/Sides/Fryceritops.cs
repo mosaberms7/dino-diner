@@ -124,9 +124,13 @@ namespace DinoDiner.Menu
         /// An accessor method for invoking a property change.
         /// </summary>
         /// <param name="name">The name of the property being changed.</param>
-        protected void NotifyOfPropertyChanged(string name = "")
+        protected void NotifyOfPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
 

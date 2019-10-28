@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -21,6 +22,9 @@ namespace DinoDiner.Menu
         /// getter for the Ingrediants property
         /// </summary>
         public virtual List<string> Ingredients { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// methode to print the name of the class
         /// </summary>

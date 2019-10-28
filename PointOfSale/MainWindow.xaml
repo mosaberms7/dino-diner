@@ -6,8 +6,14 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="900">
+    <!--<Window.DataContext>
+        <menu:Order/>
+    </Window.DataContext>-->
     <DockPanel>
-        <TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue">// TODO: Order</TextBlock>
-        <Frame Source="MenuCategorySelection.xaml"></Frame>
+        <local:OrderControl x:Name="OrderControl" Width="200" DockPanel.Dock="Right" Loaded="OrderControl_Loaded" >
+        </local:OrderControl>
+        <Frame Source="MenuCategorySelection.xaml" Name="OrderUI" 
+               DataContextChanged="OnDataContextChanged"
+               NavigationUIVisibility="Hidden"></Frame>
     </DockPanel>
 </Window>

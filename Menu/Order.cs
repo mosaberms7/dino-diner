@@ -2,36 +2,36 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Collections.Specialized;
 using System.ComponentModel;
+using DinoDiner.Menu;
+
 
 namespace DinoDiner.Menu
 {
 
         /// <summary>
         /// create  an order instance 
-        /// </summary>
-        public class Order: INotifyPropertyChanged
-        {
+        /// </summar
+  public class Order: INotifyPropertyChanged
+  {
 
         /// <summary>
         /// represent the items added to the order
         /// </summary>
-        private ObservableCollection<IOrderItem> items;
+        private List<IOrderItem> items { get; set; } = new List<IOrderItem>();
 
-        public IOrderItem[] Items {
-            get { return Items.ToArray(); }
-            set { }
+        public IOrderItem[] Items
+        {
+            get { return items.ToArray(); }
         }
-            /// <summary>
-            /// Gets the total price by summing the price of all order items.
-            /// if the cost value negative will return  0 .
-            /// </summary>
-            public double SubtotalCost
+
+        public double SubtotalCost
             {
                 get
                 {
                     double cost = 0;
-                    foreach (IOrderItem i in items)
+                    foreach (IOrderItem i in Items)
                     {
                         cost += i.Price;
                     }
@@ -71,42 +71,44 @@ namespace DinoDiner.Menu
             ///  the total cost of the order after the tax 
             /// </summary>
             public double TotalCost
+        {
+            get
             {
-                get
-                {
                 return SubtotalCost + SalesTaxCost;
-                }
             }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        }
+            
         public Order()
         {
-            items = new ObservableCollection<IOrderItem>();
-            items.CollectionChanged += Items_CollectionChanged;
+            
         }
+
         public void addItems(IOrderItem item)
         {
-            item.propertyChanged += OnCollectionChanged;
-            items.add(item);
+           // item.PropertyChanged += OnCollectionChanged;
+            items.Add(item);
             OnCollectionChanged(this, new EventArgs());
-
-        }
-        public void removeItems(IOrderItem item)
-        {
-            item.propertyChanged += OnCollectionChanged;
-            items.add(item);
-            OnCollectionChanged(this, new EventArgs());
-
         }
 
-        private void Items_CollectionChanged(object sender,EventArgs e)
+            
+            public void removeItems(IOrderItem item)
+            {
+            items.Remove(item);
+            OnCollectionChanged(this, new EventArgs());
+
+            }
+
+        private void OnCollectionChanged(Order order, EventArgs eventArgs)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
         }
+
+       
+        public event PropertyChangedEventHandler PropertyChanged;
+
     }
-    }
+}
 

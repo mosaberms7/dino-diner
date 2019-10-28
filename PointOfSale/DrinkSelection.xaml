@@ -22,6 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <Button Name="java"
+                Click="Java_Click"
                 Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
@@ -33,6 +34,7 @@
 
 
         <Button Name="cola"
+                Click="Cola_Click"
                 Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
@@ -43,6 +45,7 @@
         </Button>
 
         <Button Name="Tea"
+                Click="Tea_Click"
                 Margin="10.20,10"
             x:Uid="GenerateButton"
             Content=""
@@ -54,6 +57,7 @@
 
         <RadioButton Name="SmallDrink"
            Margin="20.20,20"
+                     Click="SmallDrink_Click"
             x:Uid="GenerateButton"
            Grid.Row="0" 
            Grid.Column="1">
@@ -72,6 +76,7 @@
 
         </RadioButton>
         <RadioButton Name="MeduimDrink"
+                     Click="MeduimDrink_Click"
              Margin="20.20,20"
 
             x:Uid="GenerateButton"
@@ -92,6 +97,7 @@
 
         <RadioButton Name="LargeDrink"
            Margin="20.20,20"
+                     Click="LargeDrink_Click"
             Uid="GenerateButton"
             Grid.Column="1"
                      Grid.Row="2">
@@ -116,7 +122,7 @@
                 Grid.Column="2"
                 Grid.Row="0">
             <Button.Background>
-                <ImageBrush ImageSource="assets/flavors.gif"/>
+                <ImageBrush ImageSource= "assets/flavors.gif"/><!--"{x:Static local:FlavorSelection.image}"-->
             </Button.Background>
         </Button>
 
@@ -125,7 +131,7 @@
             x:Uid="GenerateButton"
             Content=""
              Grid.Row="1"
-                Grid.Column="2" >
+                Grid.Column="2" Click="AddLemon_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="assets/lemon.jpg"/>
             </Button.Background>
@@ -138,7 +144,7 @@
 
             Content=""
                Grid.Row="2"
-                Grid.Column="2">
+                Grid.Column="2" Click="HoldIce_Click">
             <Button.Background>
                 <ImageBrush ImageSource="assets/noice.png"/>
             </Button.Background>

@@ -44,6 +44,7 @@
 
 
         <RadioButton Name="small"
+                     Click="Small_Click"
             x:Uid="GenerateButton"
               Grid.Row="1"
                      Margin="40,10">
@@ -62,6 +63,7 @@
 
         </RadioButton>
         <RadioButton Name="meduimcombo"
+                     Click="Meduimcombo_Click"
                 Margin="10,10"
                      x:Uid="GenerateButton"
                      Grid.Column="1"
@@ -80,8 +82,11 @@
         </RadioButton>
 
         <RadioButton Name="LargeCombo"
-            Margin="10,10"
-            x:Uid="GenerateButton" Grid.Row="1" Grid.Column="2">
+                     Click="LargeCombo_Click"
+                     Margin="10,10"
+                     x:Uid="GenerateButton"
+                     Grid.Row="1" 
+                     Grid.Column="2">
             <WrapPanel>
                 <TextBlock Foreground="Aquamarine">
                     <Run Text="LARGE" />

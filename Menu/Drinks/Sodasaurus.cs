@@ -108,13 +108,21 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{size} {flavor} Sodasaurus";
+            string flavorString = this.Flavor.ToString();
+            if (this.Flavor == SodasaurusFlavor.RootBeer)
+            {
+                flavorString = "Root Beer";
+            }
 
+            return $"{this.Size} {flavorString} Sodasaurus";
         }
-        /// <summary>
-        /// A list of special instructions to be used during Entree preparation.
-        /// </summary>
-        public string[] Special
+
+
+    
+    /// <summary>
+    /// A list of special instructions to be used during Entree preparation.
+    /// </summary>
+    public string[] Special
         {
             get
             {

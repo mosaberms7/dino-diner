@@ -24,11 +24,47 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            Order order = new Order();
-            OrderInterFace
-            order.items.add(new PrehistoricPBJ());
-            order.Navigationservice = OrderInterface.NavigationService;
+            /*       Order order = new Order();
+                   OrderInterFace
+                   order.items.add(new PrehistoricPBJ());
+                   order.Navigationservice = OrderInterface.NavigationService;  
+               */
+//            OrderControl.uxListBox.SelectionChanged += SelectedItemChanged;
+
+
         }
-        public void OnLoadComplete(object sender,NavigationService navigationService) { }
+       
+        /// <summary>
+        /// The method that handles passing down the DataContext through the pages.
+        /// </summary>
+        private void PassOnDataContext()
+        {
+            if (OrderUI.Content is Page page)  
+            {
+                page.DataContext = OrderUI.DataContext;
+
+            }
+        }
+        public void OnLoadComplete(object sender,NavigationService navigationService)
+        {
+            PassOnDataContext();
+
+        }
+
+
+        private void OrderControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Passes on the DataContext if the current DataContext is changed.
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="args">The DependencyPropertyChangedEventArgs tied to this event.</param>
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            PassOnDataContext();
+        }
+
     }
 }

@@ -26,6 +26,8 @@ namespace PointOfSale
      public MenuCategorySelection()
         {
             InitializeComponent();
+            this.ShowsNavigationUI = false;
+
         }
 
 

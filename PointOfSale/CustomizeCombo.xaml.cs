@@ -20,6 +20,7 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
+        
         public CustomizeCombo()
         {
             InitializeComponent();
@@ -36,6 +37,21 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new DrinkSelection());
 
+
+        }
+
+        private void Small_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Meduimcombo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LargeCombo_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

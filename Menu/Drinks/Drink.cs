@@ -51,6 +51,8 @@ namespace DinoDiner.Menu
         /// Ice property
         /// </summary>
         public virtual bool Ice { get; set; }
+        public virtual bool Lemon { get; set; } = false;
+
 
         public virtual string Description
         {
@@ -61,6 +63,7 @@ namespace DinoDiner.Menu
         }
        private string[] special;
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public virtual string[] Special
         {
@@ -79,6 +82,11 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual void HoldIce() {
             this.Ice = false;
+
+        }
+        public virtual void AddLemon()
+        {
+            this.Lemon = true;
 
         }
         /// <summary>
