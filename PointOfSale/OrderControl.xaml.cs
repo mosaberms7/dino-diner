@@ -21,8 +21,8 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        public NavigationService navigationService { get; set; }
-        public NavigationService navigation;
+        public NavigationService NavigationService { get; set; }
+
         public OrderControl()
         {
             InitializeComponent();
@@ -55,6 +55,11 @@ namespace PointOfSale
 
       
         private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UxListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -25,7 +25,9 @@ namespace PointOfSale
         {
             InitializeComponent();
             OrderInterface.Navigate(new MenuCategorySelection());
-            Order.NavigationService = OrderInterface.NavigationService;
+            Order order = new Order();
+            DataContext = order;
+            OrderControl.NavigationService = OrderInterface.NavigationService;
            
 
 

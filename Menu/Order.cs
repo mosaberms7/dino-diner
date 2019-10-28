@@ -5,6 +5,7 @@ using System.Text;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using DinoDiner.Menu;
+using System.Windows;
 
 
 namespace DinoDiner.Menu
@@ -47,7 +48,7 @@ namespace DinoDiner.Menu
             public double SalesTaxRate {
             get
             {
-                return SalesTaxRate;
+                return .01;
             }
             set
             {
@@ -89,20 +90,29 @@ namespace DinoDiner.Menu
         {
            // item.PropertyChanged += OnCollectionChanged;
             items.Add(item);
-            item.PropertyChanged+= onproper
-            Notify
+            item.PropertyChanged += OnPropertyChanged;
+            OnCollectionChanged();
         }
 
        
 
-            public void removeItems(IOrderItem item)
+            public bool removeItems(IOrderItem item)
             {
-            items.Remove(item);
-            OnCollectionChanged(this, new EventArgs());
+            bool removed = items.Remove(item);
+            if (removed)
+            {
+                OnCollectionChanged();
 
             }
+            return removed;
+            }
+        private void OnPropertyChanged(object sender,PropertyChangedEventArgs args)
+        {
 
-        private void OnCollectionChanged(Order order, EventArgs eventArgs)
+            OnCollectionChanged();
+        }
+
+        protected void OnCollectionChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
