@@ -105,7 +105,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side.Size = Size;
-                order.Items.Add(side);
+                order.addItems(side);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }

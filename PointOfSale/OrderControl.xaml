@@ -29,7 +29,7 @@
                    Margin="5,0,0,0"/>
         <ListBox Grid.Row="1"
                  Grid.ColumnSpan="2"
-                 ItemsSource="{ Binding Path=Items}"
+                 ItemsSource="{ Binding Path=items}"
                  IsSynchronizedWithCurrentItem="True"
                  x:Name="uxListBox">
             <ListBox.ItemTemplate>

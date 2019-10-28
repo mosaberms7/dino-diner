@@ -154,7 +154,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink.Size = Size;
-                order.Items.Add(drink);
+                order.addItems(drink);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }

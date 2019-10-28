@@ -10,10 +10,22 @@
         <menu:Order/>
     </Window.DataContext>-->
     <DockPanel>
-        <local:OrderControl x:Name="OrderControl" Width="200" DockPanel.Dock="Right" Loaded="OrderControl_Loaded" >
+        <local:OrderControl x:Name="OrderControl" Width="200" DockPanel.Dock="Right"  >
         </local:OrderControl>
-        <Frame Source="MenuCategorySelection.xaml" Name="OrderUI" 
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="back" Width="150" Click="Back_Click">
+            </Button>
+        </Grid>
+
+
+        <Frame Name="OrderInterface" 
                DataContextChanged="OnDataContextChanged"
+               LoadCompleted="OrderInterface_LoadCompleted_1"
                NavigationUIVisibility="Hidden"></Frame>
     </DockPanel>
 </Window>

@@ -25,9 +25,7 @@
         <Button Name="cola"
                 Click="Cola_Click"
             Margin="20,20"
-            x:Uid="GenerateButton1"
-            
-            >
+            x:Uid="GenerateButton1" >
             <Button.Background>
                 <ImageBrush ImageSource="assets/cola.jpg"/>
             </Button.Background>

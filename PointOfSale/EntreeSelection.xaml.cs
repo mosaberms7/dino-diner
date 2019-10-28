@@ -65,8 +65,13 @@ namespace PointOfSale
 
         private void Pbj_Click(object sender, RoutedEventArgs e)
         {
-            AddItem(new PrehistoricPBJ());
-            NavigationService.Navigate(new MenuCategorySelection());
+          //the class work 10/28  
+            if (DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                AddItem(pbj);
+                NavigationService.Navigate(new customoizepbj(pbj));
+            }
 
 
         }
@@ -83,7 +88,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(entree);
+                order.addItems(entree);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }

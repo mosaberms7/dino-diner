@@ -77,7 +77,9 @@ namespace DinoDiner.Menu
                 return SubtotalCost + SalesTaxCost;
             }
         }
-            
+
+
+
         public Order()
         {
             
@@ -87,10 +89,12 @@ namespace DinoDiner.Menu
         {
            // item.PropertyChanged += OnCollectionChanged;
             items.Add(item);
-            OnCollectionChanged(this, new EventArgs());
+            item.PropertyChanged+= onproper
+            Notify
         }
 
-            
+       
+
             public void removeItems(IOrderItem item)
             {
             items.Remove(item);

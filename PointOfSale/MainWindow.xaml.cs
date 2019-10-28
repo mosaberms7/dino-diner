@@ -24,12 +24,9 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            /*       Order order = new Order();
-                   OrderInterFace
-                   order.items.add(new PrehistoricPBJ());
-                   order.Navigationservice = OrderInterface.NavigationService;  
-               */
-//            OrderControl.uxListBox.SelectionChanged += SelectedItemChanged;
+            OrderInterface.Navigate(new MenuCategorySelection());
+            Order.NavigationService = OrderInterface.NavigationService;
+           
 
 
         }
@@ -39,21 +36,17 @@ namespace PointOfSale
         /// </summary>
         private void PassOnDataContext()
         {
-            if (OrderUI.Content is Page page)  
-            {
-                page.DataContext = OrderUI.DataContext;
-
-            }
+            setFrameDataContext();
         }
         public void OnLoadComplete(object sender,NavigationService navigationService)
         {
-            PassOnDataContext();
-
+            setFrameDataContext();
         }
 
 
         private void OrderControl_Loaded(object sender, RoutedEventArgs e)
         {
+            setFrameDataContext();
 
         }
         /// <summary>
@@ -63,8 +56,28 @@ namespace PointOfSale
         /// <param name="args">The DependencyPropertyChangedEventArgs tied to this event.</param>
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
-            PassOnDataContext();
+            setFrameDataContext();
         }
 
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            OrderInterface.NavigationService.Navigate(new MenuCategorySelection());
+
+        }
+
+        private void setFrameDataContext()
+        {
+            var content = OrderInterface.Content as FrameworkElement;
+            if (content == null)
+                return;
+            content.DataContext = OrderInterface.DataContext;
+
+        }
+       
+        private void OrderInterface_LoadCompleted_1(object sender, NavigationEventArgs e)
+        {
+            setFrameDataContext();
+
+        }
     }
 }
