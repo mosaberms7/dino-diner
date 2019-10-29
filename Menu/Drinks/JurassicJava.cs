@@ -69,6 +69,27 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// to change the decaf property
+        /// </summary>
+        public void notdecaf() {
+            decaf = true;
+
+            NotifyOfPropertyChanged("Decaf");
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Special");
+
+        }
+        public void addsweet()
+        {
+            Sweet = true;
+
+            NotifyOfPropertyChanged("Sweet");
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Special");
+
+        }
+
+        /// <summary>
         /// A methode to set the roomforcream propertu to true
         /// </summary>
         public void LeaveRoomForCream()
@@ -168,12 +189,14 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            if(Decaf)
-                return $"{size} Decaf Jurassic Java";
+            if(Decaf&Sweet)
+                return $"{size} decaf sweet \n Jurassic Java";
+            else if (!decaf & Sweet)
+                return $"{size} sweet \n Jurassic Java";
+            else if (decaf & !Sweet)
+                return $"{size} decaf \n Jurassic Java";
             else 
-                return $"{size} Jurassic Java";
-
-
+                return $"{size} \n Jurassic Java";
         }
 
     }

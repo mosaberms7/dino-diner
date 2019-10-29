@@ -30,6 +30,8 @@ namespace DinoDiner.Menu
             base.HoldIce();
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ice");
+            NotifyOfPropertyChanged("Description");
+
 
 
         }
@@ -114,7 +116,7 @@ namespace DinoDiner.Menu
                 flavorString = "Root Beer";
             }
 
-            return $"{this.Size} {flavorString} Sodasaurus";
+            return $"{this.Size} {flavorString}\n Sodasaurus";
         }
 
 

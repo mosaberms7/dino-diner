@@ -69,6 +69,9 @@
     <Compile Include="EntreeSelection.xaml.cs">
       <DependentUpon>EntreeSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlavorSelection2.xaml.cs">
+      <DependentUpon>FlavorSelection2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuCategorySelection.xaml.cs">
       <DependentUpon>MenuCategorySelection.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FlavorSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlavorSelection2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,7 +175,15 @@
     <Resource Include="assets\soda.jpg" />
     <Resource Include="assets\ss3.jpg" />
     <Resource Include="assets\SF.jpg" />
+    <Resource Include="assets\pay2.jpg" />
+    <Resource Include="assets\pay3.png" />
+    <Resource Include="assets\cancel.png" />
+    <Resource Include="assets\back.png" />
+    <Resource Include="assets\red.png" />
+    <Resource Include="assets\dc.jpg" />
+    <Resource Include="assets\sugar.jpg" />
     <Content Include="assets\trex.jpg" />
+    <None Include="assets\pay.webp" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -145,7 +145,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<String> special = new List<string>();
-                if (!Lemon)
+                if (Lemon)
                     special.Add("Add Lemon");
                 if (Sweet)
                     special.Add("Add Sweet");

@@ -120,7 +120,8 @@
             Content=""
             Click="Flavor_Click"  
                 Grid.Column="2"
-                Grid.Row="0">
+                Grid.Row="0"
+                >
             <Button.Background>
                 <ImageBrush ImageSource= "assets/flavors.gif"/><!--"{x:Static local:FlavorSelection.image}"-->
             </Button.Background>
@@ -144,7 +145,8 @@
 
             Content=""
                Grid.Row="2"
-                Grid.Column="2" Click="HoldIce_Click">
+                Grid.Column="2" 
+                Click="HoldIce_Click">
             <Button.Background>
                 <ImageBrush ImageSource="assets/noice.png"/>
             </Button.Background>

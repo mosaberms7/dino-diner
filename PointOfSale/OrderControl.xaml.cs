@@ -30,15 +30,12 @@ namespace PointOfSale
 
      
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-              //  order.Clear();
-            }
-
-        }
-
+      
+        /// <summary>
+        /// remove the item from th elist
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;

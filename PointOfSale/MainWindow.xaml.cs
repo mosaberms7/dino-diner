@@ -81,5 +81,10 @@ namespace PointOfSale
             setFrameDataContext();
 
         }
+
+        private void OrderControl_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

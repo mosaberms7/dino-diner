@@ -8,12 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="200"
       >
 
-    <Grid>
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,58 +27,78 @@
                    FontWeight="Bold"
                    Grid.Column="1"
                    Margin="5,0,0,0"/>
-        <ListBox Grid.Row="1"
+            <ListBox Grid.Row="1"
+                 Background="Black"
                  Grid.ColumnSpan="2"
                  ItemsSource="{ Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
                  IsSynchronizedWithCurrentItem="True"
                  SelectionChanged="UxListBox_SelectionChanged"
                  x:Name="uxListBox">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Grid MinWidth="180">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="20"/>
-                            </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="{Binding Path=Description}"/>
-                            <Button x:Name="DeleteButton" 
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Grid MinWidth="180">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Path=Description}"
+                                       Foreground="White"
+                                       FontSize="16"/>
+                                <Button x:Name="DeleteButton" 
                                 Width="20" 
+                                
                                 Click="DeleteButton_Click"
                                 Height="20" 
                                 HorizontalAlignment="Right" 
                                 VerticalAlignment="Center"
                                 Grid.Column="1"
-                                Tag="{Binding}">X</Button>
+                                Tag="{Binding}">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="assets/red.png"/>
+                                </Button.Background>
+                            </Button>
 
-                        </Grid>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
-                    </StackPanel>
+                            </Grid>
+                                <ListBox ItemsSource="{Binding Path=Special}"
+                                 Background="Black"
+                                  Foreground="White"
+                                  FontSize="18"/>
+                        </StackPanel>
 
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
 
 
         <TextBlock Text="{Binding Path=SubtotalCost,StringFormat=n2}"
-                   Background="Aqua"
+                   Foreground="Green"
+                    FontSize="18"
                    FontWeight="Bold"
                    Grid.Column="0"
                    TextAlignment="Center"
                    Grid.Row="2"  
+                   
                    Height="20"
                    VerticalAlignment="Top"/>
-
-        <TextBlock Text="{Binding Path=SalesTaxCost,StringFormat=n2}"
+            <TextBlock Text="{Binding Path=SalesTaxCost,StringFormat=n2}"
+                   Foreground="Green"
+                   FontSize="18"
                    FontWeight="Bold"
                    TextAlignment="Center"
                    Grid.Row="2"
-                   Background="Aqua"
                    Grid.Column="2"/>
 
-        <Button Grid.Row="3" Click="Button_Click">Cancel</Button>
-        <Button Grid.Row="3"  Click="Button_Click_1" Grid.Column="1">Pay</Button>
+        <Button Grid.Row="3" >
+            <Button.Background>
+            <ImageBrush ImageSource="assets/pay2.jpg"/>
+            </Button.Background> </Button>
+        <Button Grid.Row="3"   Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/cancel.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>

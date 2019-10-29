@@ -23,9 +23,12 @@ namespace PointOfSale
     {
         public Drink drink { get; private set; }
         public DinoDiner.Menu.Size Size { get; private set; }
-        public bool Lemon { get; private set; } = false;
-        public bool Ice { get; private set; } = true;
+        public bool Lemon { get; private set; } = true;
+        public bool Ice { get; private set; } = false;
+        public bool sodachossen = false;
+        public bool cofeechossen = false;
 
+        public bool tea;
 
 
         /// <summary>
@@ -36,8 +39,7 @@ namespace PointOfSale
             InitializeComponent();
             this.ShowsNavigationUI = false;
             this.DataContext = this;
-
-
+            tea = false;
         }
 
 
@@ -49,9 +51,17 @@ namespace PointOfSale
 
         private void Flavor_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new FlavorSelection());
-        }
+            if (sodachossen)
+                NavigationService.Navigate(new FlavorSelection());
+            else if(cofeechossen)
+                NavigationService.Navigate(new FlavorSelection2());
 
+        }
+        /// <summary>
+        /// when the small size clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SmallDrink_Click(object sender, RoutedEventArgs e)
         {
             Size = DinoDiner.Menu.Size.Small;
@@ -64,7 +74,11 @@ namespace PointOfSale
 
             }
         }
-
+        /// <summary>
+        /// meduim size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MeduimDrink_Click(object sender, RoutedEventArgs e)
         {
             Size = DinoDiner.Menu.Size.Medium;
@@ -76,7 +90,11 @@ namespace PointOfSale
                 }
             }
         }
-
+        /// <summary>
+        /// large size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void LargeDrink_Click(object sender, RoutedEventArgs e)
         {
@@ -90,33 +108,51 @@ namespace PointOfSale
                 }
             }
         }
-
+        /// <summary>
+        /// cols is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cola_Click(object sender, RoutedEventArgs e)
         {
             drink = new Sodasaurus();
+            sodachossen = true;
             AddItem(drink);
 
         }
-
+        /// <summary>
+        /// the trynoatea is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Tea_Click(object sender, RoutedEventArgs e)
         {
             drink = new Tyrannotea();
-            
+            tea = true;
             drink.HoldIce();
             AddItem(drink);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Java_Click(object sender, RoutedEventArgs e)
         {
             drink = new JurassicJava();
+            cofeechossen = true;
             AddItem(drink);
 
 
         }
-
+        /// <summary>
+        /// to add lemon oo the order item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddLemon_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (tea) { 
 
             if (DataContext is Order order)
             {
@@ -124,19 +160,25 @@ namespace PointOfSale
                 {
                     if (drink is Tyrannotea tea)
                     {
-                        tea.Lemon = Lemon;
-                    }
+                            tea.AddLemon();                    }
                     else if (drink is Water water)
                     {
-                        water.Lemon = Lemon;
-                    }
+                            water.AddLemon();                    }
                 }
             }
+            tea = false;
         }
+            
 
+        }
+        /// <summary>
+        /// hold the ice 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HoldIce_Click(object sender, RoutedEventArgs e)
         {
-            if (!Ice)
+            if (Ice)
             {
                 Ice = false;
             }
@@ -144,11 +186,15 @@ namespace PointOfSale
             {
                 if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
                 {
-                    drink.Ice = Ice;
+                    drink.HoldIce();
                 }
             }
 
         }
+        /// <summary>
+        /// adding item to the list
+        /// </summary>
+        /// <param name="drink"></param>
         private void AddItem(Drink drink)
         {
             if (DataContext is Order order)

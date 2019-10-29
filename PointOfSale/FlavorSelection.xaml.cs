@@ -21,7 +21,6 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        public static string image { get; set; } = "assets/cola.jpg";
 
         public DrinkSelection returnPage { get; set; }
         public SodasaurusFlavor flavor { get; private set; }
@@ -41,65 +40,137 @@ namespace PointOfSale
         DrinkSelection d = new DrinkSelection();
         
     
-
+        /// <summary>
+        /// select a cola flavor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cola_Click(object sender, RoutedEventArgs e)
         {
             string flavor = (string)(((Button)sender).Content);
             flavor = (SodasaurusFlavor.Cola).ToString();
-            image = "assets/cola.jpg";
-            NavigationService.Navigate(returnPage);
+            NavigationService.GoBack();
         }
-
+        /// <summary>
+        /// select a cherry flavor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cherry_Click(object sender, RoutedEventArgs e)
         {
-            string flavor = (string)(((Button)sender).Content);
-            flavor = (SodasaurusFlavor.Cherry).ToString();
-            image = "assets/cherry.jpg";
-            NavigationService.Navigate(returnPage);
+            
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Sodasaurus sodasaurus)
+                    {
+                        sodasaurus.Flavor = SodasaurusFlavor.Cherry;
+                    }
+                    
+                }
+            }
+            NavigationService.GoBack();
         }
-
+        /// <summary>
+        /// select a choco flavor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Choco_Click(object sender, RoutedEventArgs e)
         {
-            string flavor = (string)(((Button)sender).Content);
-            flavor = (SodasaurusFlavor.Chocolate).ToString();
-            image = "assets/choco.jpg";
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Sodasaurus sodasaurus)
+                    {
+                        sodasaurus.Flavor = SodasaurusFlavor.Chocolate;
+                    }
 
-            NavigationService.Navigate(returnPage);
+                }
+            }
+            NavigationService.GoBack();
         }
-
-        private void Lemon_Click(object sender, RoutedEventArgs e)
+            /// <summary>
+            /// Add lemon 
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void Lemon_Click(object sender, RoutedEventArgs e)
         {
-            string flavor = (string)(((Button)sender).Content);
-            flavor = (SodasaurusFlavor.Lime).ToString();
-            image = "assets/lime.jpg";
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Sodasaurus sodasaurus)
+                    {
+                        sodasaurus.Flavor = SodasaurusFlavor.Lime;
+                    }
 
-            NavigationService.Navigate(returnPage);
+                }
+            }
+            NavigationService.GoBack();
         }
-
+        /// <summary>
+        /// select a Rootbeer flavor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Rootbeer_Click(object sender, RoutedEventArgs e)
         {
-            string flavor = (string)(((Button)sender).Content);
-            flavor = (SodasaurusFlavor.RootBeer).ToString();
-            image = "assets/rb.jpg";
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Sodasaurus sodasaurus)
+                    {
+                        sodasaurus.Flavor = SodasaurusFlavor.RootBeer;
+                    }
 
-            NavigationService.Navigate(returnPage);
+                }
+            }
+            NavigationService.GoBack();
         }
-
+        /// <summary>
+        /// select a Vanilla flavor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Vanilla_Click(object sender, RoutedEventArgs e)
         {
-            string flavor = (string)(((Button)sender).Content);
-            flavor = (SodasaurusFlavor.Vanilla).ToString();
-            image = "assets/VANILLA.jpeg";
-            NavigationService.Navigate(returnPage);
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Sodasaurus sodasaurus)
+                    {
+                        sodasaurus.Flavor = SodasaurusFlavor.Vanilla;
+                    }
 
+                }
+            }
+            NavigationService.GoBack();
         }
-
+        /// <summary>
+        /// select a Orange flavor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Orange_Click(object sender, RoutedEventArgs e)
         {
-            string flavor = (string)(((Button)sender).Content);
-            flavor = (SodasaurusFlavor.Orange).ToString();
-            image = "assets/orange.png";
-            NavigationService.Navigate(returnPage);
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Sodasaurus sodasaurus)
+                    {
+                        sodasaurus.Flavor = SodasaurusFlavor.Orange;
+                    }
+
+                }
+            }
+            NavigationService.GoBack();
         }
     }
 }
