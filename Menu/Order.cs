@@ -72,12 +72,12 @@ namespace DinoDiner.Menu
             ///  the total cost of the order after the tax 
             /// </summary>
             public double TotalCost
-        {
+            {
             get
             {
                 return SubtotalCost + SalesTaxCost;
             }
-        }
+            }
 
 
 
@@ -85,17 +85,23 @@ namespace DinoDiner.Menu
         {
             
         }
-
+        /// <summary>
+        /// add orders to the list
+        /// </summary>
+        /// <param name="item"></param>
         public void addItems(IOrderItem item)
         {
-           // item.PropertyChanged += OnCollectionChanged;
             items.Add(item);
             item.PropertyChanged += OnPropertyChanged;
             OnCollectionChanged();
         }
 
        
-
+        /// <summary>
+        /// remove from the list
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
             public bool removeItems(IOrderItem item)
             {
             bool removed = items.Remove(item);
@@ -106,12 +112,19 @@ namespace DinoDiner.Menu
             }
             return removed;
             }
+        /// <summary>
+        /// event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnPropertyChanged(object sender,PropertyChangedEventArgs args)
         {
 
             OnCollectionChanged();
         }
-
+        /// <summary>
+        /// property changed event handler
+        /// </summary>
         protected void OnCollectionChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));

@@ -77,9 +77,11 @@
             </Setter.Value>
 
         </Setter>
+        
 
     </Style>
-    <GradientStopCollection x:Key="MyGlassGradientStopsResource">
+       
+        <GradientStopCollection x:Key="MyGlassGradientStopsResource">
         <GradientStop Color="AntiqueWhite"  />
         <GradientStop Color="Transparent"  />
         <GradientStop Color="WhiteSmoke" />

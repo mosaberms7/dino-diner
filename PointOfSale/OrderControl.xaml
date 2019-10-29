@@ -45,7 +45,9 @@
                                 </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding Path=Description}"
                                        Foreground="White"
-                                       FontSize="16"/>
+                                               FontStyle="Oblique"
+                                       Background="Black"
+                                       FontSize="18"/>
                                 <Button x:Name="DeleteButton" 
                                 Width="20" 
                                 
@@ -61,11 +63,15 @@
                             </Button>
 
                             </Grid>
-                                <ListBox ItemsSource="{Binding Path=Special}"
+                        <Border CornerRadius="10" BorderThickness="1" BorderBrush="White" >
+
+                            <ListBox ItemsSource="{Binding Path=Special}"
+                                    BorderThickness="0"       
                                  Background="Black"
-                                  Foreground="White"
-                                  FontSize="18"/>
-                        </StackPanel>
+                                  Foreground="Gray"
+                                  FontSize="16"/>
+                        </Border>
+                    </StackPanel>
 
                     </DataTemplate>
                 </ListBox.ItemTemplate>
