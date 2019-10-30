@@ -30,15 +30,20 @@ namespace PointOfSale
 
         public bool tea;
 
-
         /// <summary>
         /// construct a new instance of drinkn selection
         /// </summary>
+        public DrinkSelection(Drink drink) {
+            this.drink = drink;
+            InitializeComponent();
+            tea = false;
+
+        }
         public DrinkSelection()
         {
             InitializeComponent();
             this.ShowsNavigationUI = false;
-            this.DataContext = this;
+      //      this.DataContext = this;
             tea = false;
         }
 
