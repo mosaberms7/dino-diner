@@ -53,6 +53,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ComboSelection.xaml.cs">
       <DependentUpon>ComboSelection.xaml</DependentUpon>
@@ -184,7 +185,10 @@
     <Resource Include="assets\sugar.jpg" />
     <Content Include="assets\trex.jpg" />
     <None Include="assets\pay.webp" />
-    <None Include="Properties\Settings.settings">
+    <None Include="Milestones\1-create-order-pages.workbook" />
+    <None Include="Milestones\2-user-interaction-part-I.workbook" />
+    <None Include="Milestones\3-user-interaction-part-II.workbook" />
+   <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
@@ -252,6 +256,7 @@
     <Resource Include="assets\rb.jpg" />
   </ItemGroup>
   <ItemGroup>
+
     <ProjectReference Include="..\Menu\Menu.csproj">
       <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
       <Name>Menu</Name>

@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu", "Menu\Menu.csproj", "{2F5F801D-C838-4C96-A2BE-A40C4DFFB719}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuTest", "MenuTest\MenuTest.csproj", "{28FA195A-1488-4A0E-AD40-F1133624DD80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuTest", "MenuTest\MenuTest.csproj", "{28FA195A-1488-4A0E-AD40-F1133624DD80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{9FABDA8A-4F96-4763-A7C3-41AC367CE151}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{9FABDA8A-4F96-4763-A7C3-41AC367CE151}"
 EndProject
