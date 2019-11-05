@@ -27,10 +27,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public override void HoldIce()
         {
-            base.HoldIce();
+            this.Ice = false;
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ice");
-            NotifyOfPropertyChanged("Description");
 
 
 
@@ -113,10 +112,10 @@ namespace DinoDiner.Menu
             string flavorString = this.Flavor.ToString();
             if (this.Flavor == SodasaurusFlavor.RootBeer)
             {
-                flavorString = "Root Beer";
+                flavorString = "RootBeer";
             }
 
-            return $"{this.Size} {flavorString}\n Sodasaurus";
+            return $"{this.Size} {flavorString} Sodasaurus";
         }
 
 
@@ -124,7 +123,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A list of special instructions to be used during Entree preparation.
     /// </summary>
-    public string[] Special
+    public override string[] Special
         {
             get
             {
@@ -139,7 +138,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the Entree.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {
@@ -152,7 +151,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The event handler that handles if any properties of the combo were changed.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// An accessor method for invoking a property change.
@@ -166,3 +165,4 @@ namespace DinoDiner.Menu
 
     }
 }
+

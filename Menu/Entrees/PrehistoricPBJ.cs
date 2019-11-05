@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
         private bool peanutButter = true;
         private bool jelly = true;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
 
         protected void NotifyOfPropertyChanged(string PropertyName)
@@ -58,6 +58,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChanged("peanutButter");
+
             NotifyOfPropertyChanged("Special");
         }
         /// <summary>
@@ -66,6 +68,8 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChanged("jelly");
+
             NotifyOfPropertyChanged("Special");
 
         }
@@ -81,7 +85,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// A list of special instructions to be used during Entree preparation.
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -95,7 +99,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the Entree.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get {
                 return this.ToString();

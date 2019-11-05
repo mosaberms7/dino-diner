@@ -8,15 +8,33 @@ namespace DinoDiner.Menu
 {
     public class JurassicJava : Drink,IOrderItem,INotifyPropertyChanged
     {
+        //add the sset functionalry for the ice property 
         private Size size;
         /// <summary>
         /// setter and getter for the sweet property
         /// </summary>
         public bool Sweet { get; set; }
         /// <summary>
+        /// setter and getter for the Ice property
+        /// </summary>
+        private bool ice;
+        public override bool Ice
+        {
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChanged("Ice");
+                NotifyOfPropertyChanged("Special");
+            }
+            get
+            {
+                return ice;
+            }
+        }
+        /// <summary>
         /// setter and getter for the lemon property
         /// </summary>
-        public bool Lemon { get; set; }
+        public override bool Lemon { get; set; }
         /// <summary>
         /// constructs a new instance of JurrasicJava and sete the price property to 0.59
         /// the calories to 2
@@ -34,7 +52,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The event handler that handles if any properties of the combo were changed.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new  event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// An accessor method for invoking a property change.
@@ -63,8 +81,7 @@ namespace DinoDiner.Menu
                 decaf = value;
                 NotifyOfPropertyChanged("Decaf");
                 NotifyOfPropertyChanged("Description");
-
-
+                NotifyOfPropertyChanged("Special");
 
             }
         }
@@ -75,8 +92,9 @@ namespace DinoDiner.Menu
             decaf = true;
 
             NotifyOfPropertyChanged("Decaf");
-            NotifyOfPropertyChanged("Description");
             NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
+
 
         }
         public void addsweet()
@@ -95,6 +113,8 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             this.RoomForCream = true;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("RoomForCream");
         }
         /// <summary>
         /// A methode to set the Ice propertu to true
@@ -102,8 +122,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
-            NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ice");
+            NotifyOfPropertyChanged("Special");
 
 
 
@@ -118,10 +138,7 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
-                NotifyOfPropertyChanged("Description");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("Size");
+               
                 switch (value)
                 {
                     case Size.Small:
@@ -138,6 +155,11 @@ namespace DinoDiner.Menu
                         break;
 
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
+
             }
             get
             {
@@ -189,14 +211,16 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            if(Decaf&Sweet)
-                return $"{size} decaf sweet \n Jurassic Java";
-            else if (!decaf & Sweet)
-                return $"{size} sweet \n Jurassic Java";
-            else if (decaf & !Sweet)
-                return $"{size} decaf \n Jurassic Java";
-            else 
-                return $"{size} \n Jurassic Java";
+            if (Decaf)  return $"{size} Decaf Jurassic Java";
+            else return $"{size} Jurassic Java";
+            //if (Decaf&Sweet)
+            //    return $"{size} decaf sweet Jurassic Java";
+            //else if (!decaf & Sweet)
+            //    return $"{size} sweet  Jurassic Java";
+            //else if (decaf & !Sweet)
+            //    return $"{size} decaf  Jurassic Java";
+            //else 
+            //    return $"{size}  Jurassic Java";
         }
 
     }

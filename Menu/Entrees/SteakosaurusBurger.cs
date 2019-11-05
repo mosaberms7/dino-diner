@@ -55,6 +55,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.whole_wheat_bun = false;
+            NotifyOfPropertyChanged("whole_wheat_bun");
+
             NotifyOfPropertyChanged("Special");
 
         }
@@ -64,6 +66,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChanged("pickle");
+
             NotifyOfPropertyChanged("Special");
 
         }
@@ -73,6 +77,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChanged("ketchup");
+
             NotifyOfPropertyChanged("Special");
 
         }
@@ -82,6 +88,15 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChanged("mustard");
+
+            NotifyOfPropertyChanged("Special");
+
+        }
+        public void HoldPattie()
+        {
+            this.steakburger_pattie = false;
+            NotifyOfPropertyChanged("steakburger_pattie");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -90,7 +105,7 @@ namespace DinoDiner.Menu
             return "Steakosaurus Burger";
 
         }
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -108,7 +123,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the Entree.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {
@@ -122,7 +137,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The event handler that handles if any properties of the combo were changed.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// An accessor method for invoking a property change.

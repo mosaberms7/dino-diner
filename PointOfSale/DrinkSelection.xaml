@@ -24,9 +24,7 @@
         <Button Name="java"
                 Click="Java_Click"
                 Margin="10.20,10"
-            x:Uid="GenerateButton"
-            Content=""
-        >
+            x:Uid="GenerateButton">
             <Button.Background>
                 <ImageBrush ImageSource="assets/java.jpg"/>
             </Button.Background>

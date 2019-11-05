@@ -38,7 +38,7 @@ namespace PointOfSale
         private void Hotdog_Click(object sender, RoutedEventArgs e)
         {
             AddItem(new Brontowurst());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new BrontowurstCustomize());
 
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace PointOfSale
         private void Nuggets_Click(object sender, RoutedEventArgs e)
         {
             AddItem(new DinoNuggets());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new DinoNuggetsCustomize());
 
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace PointOfSale
         private void Trex_Click(object sender, RoutedEventArgs e)
         {
             AddItem(new TRexKingBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new TRexBurgerCustomize());
 
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace PointOfSale
         private void Steakburger_Click(object sender, RoutedEventArgs e)
         {
             AddItem(new SteakosaurusBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new SteakosaurusBurgerCustomize());
 
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace PointOfSale
             {
                 PrehistoricPBJ pbj = new PrehistoricPBJ();
                 AddItem(pbj);
-                NavigationService.Navigate(new customoizepbj(pbj));
+                NavigationService.Navigate(new PrehistoricPBJCustomize(pbj));
             }
 
 
@@ -110,7 +110,7 @@ namespace PointOfSale
         private void Wrap_Click(object sender, RoutedEventArgs e)
         {
             AddItem(new VelociWrap());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new WrapCustomize());
 
 
 

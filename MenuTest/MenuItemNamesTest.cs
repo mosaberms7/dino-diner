@@ -137,7 +137,7 @@ namespace MenuTest
         {
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             mmc.Size = size;
-            Assert.Equal($"{size} Meteor Mac and Cheese", mmc.ToString());
+            Assert.Equal($"{size} MeteorMac&Cheese", mmc.ToString());
         }
 
         [Theory]
@@ -257,7 +257,7 @@ namespace MenuTest
         {
             Entree entree = (Entree)Activator.CreateInstance(type);
             CretaceousCombo combo = new CretaceousCombo(entree);
-            Assert.Equal("DinoDiner.Menu."+name, combo.ToString());
+            Assert.Equal(name, combo.ToString());
         }
 
         #endregion

@@ -152,7 +152,7 @@ namespace DinoDiner.Menu
         /// <returns>Returns the name of the combo.</returns>
         public override string ToString()
         {
-            return $"{this.Entree} Combo";
+            return $"{this.Size} {this.Entree.ToString()} Combo";
         }
 
         /// <summary>
@@ -163,10 +163,11 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
+
         /// <summary>
         /// A list of special instructions to be used during combo preparation.
         /// </summary>
-        public string[] Special
+        public  string[] Special
         {
             get
             {
@@ -194,6 +195,43 @@ namespace DinoDiner.Menu
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+        private Size size;
+        public  Size Size
+        {
 
+            set
+            {
+                size = value;
+               
+                switch (value)
+                {
+                    case Size.Small:
+
+                        //this.Price = 0.59;
+                        //this.Calories = 2;
+                        break;
+                    case Size.Medium:
+                        //this.Price = 0.99;
+                        //this.Calories = 4;
+                        break;
+                    case Size.Large:
+                        //this.Price = 1.49;
+                        //this.Calories = 8;
+                        break;
+
+                }
+                NotifyOfPropertyChanged("Size");
+
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Special");
+
+            }
+            get
+            {
+                return size;
+            }
+
+        }
     }
 }

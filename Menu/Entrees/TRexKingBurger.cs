@@ -66,6 +66,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.whole_wheat_bun = false;
+            NotifyOfPropertyChanged("whole_wheat_bun");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -76,6 +77,7 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.Pickle = false;
+            NotifyOfPropertyChanged("Pickle");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -85,6 +87,7 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.Ketchup = false;
+            NotifyOfPropertyChanged("Ketchup");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -94,6 +97,7 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.Mustard = false;
+            NotifyOfPropertyChanged("Mustard");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -103,6 +107,7 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyOfPropertyChanged("tomato");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -112,6 +117,7 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.Onion = false;
+            NotifyOfPropertyChanged("Onion");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -121,6 +127,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.Lettuce = false;
+            NotifyOfPropertyChanged("Lettuce");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -130,6 +137,7 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.Mayo = false;
+            NotifyOfPropertyChanged("Mayo");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -141,7 +149,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// A list of special instructions to be used during Entree preparation.
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -162,7 +170,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the Entree.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {

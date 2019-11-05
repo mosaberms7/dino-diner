@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
     {
         private bool brautwurst = true;
         private bool whole_wheat_bun = true;
-        private bool peppers = true;
+        private bool peppers { get; set; } = true;
         private bool onions = true;
         /// <summary>
         /// setter and getter for the price property
@@ -54,8 +54,9 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
-            NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Peppers");
+
+            NotifyOfPropertyChanged("Special");
 
         }
         /// <summary>
@@ -64,8 +65,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onions = false;
-            NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Onion");
+            NotifyOfPropertyChanged("Special");
 
 
 
@@ -76,8 +77,9 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.whole_wheat_bun = false;
-            NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("whole_wheat_bun");
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Special");
 
 
 
@@ -90,14 +92,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the combo.
         /// </summary>
-        public virtual string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
         /// <summary>
         /// A list of special instructions to be used during combo preparation.
         /// </summary>
-        public virtual string[] Special
+        public override string[] Special
         {
             get
             {
@@ -106,9 +108,9 @@ namespace DinoDiner.Menu
                     details.Add("Hold Bun");
               
                 if (!peppers)
-                    details.Add("Peppers");
+                    details.Add("Holod Peppers");
                 if (!onions)
-                    details.Add("Onions");
+                    details.Add("Hold Onions");
 
                 return details.ToArray();
 
@@ -119,7 +121,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The event handler that handles if any properties of the combo were changed.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// An accessor method for invoking a property change.

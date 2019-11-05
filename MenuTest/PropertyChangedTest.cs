@@ -119,6 +119,8 @@ namespace MenuTest
 
             Assert.PropertyChanged(j, "Ice", () => j.Ice = true);
             Assert.PropertyChanged(j, "Special", () => j.Ice = true);
+            //Assert.PropertyChanged(j, "Ice", () => j.AddIce());
+            //Assert.PropertyChanged(j, "Special", () => j.AddIce());
         }
 
         [Fact]
@@ -133,8 +135,8 @@ namespace MenuTest
             Assert.PropertyChanged(s, "Description", () => s.Flavor = SodasaurusFlavor.Cherry);
             Assert.PropertyChanged(s, "Flavor", () => s.Flavor = SodasaurusFlavor.Cherry);
 
-            Assert.PropertyChanged(s, "Ice", () => s.Ice = true);
-            Assert.PropertyChanged(s, "Special", () => s.Ice = true);
+            Assert.PropertyChanged(s, "Ice", () => s.Ice = false);
+            Assert.PropertyChanged(s, "Special", () => s.Ice = false);
         }
 
         [Fact]

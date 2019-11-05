@@ -51,6 +51,8 @@ namespace DinoDiner.Menu
             Price += 0.25;
             Calories += 59; ;
             this.Nuggets++;
+            NotifyOfPropertyChanged("Nuggets");
+
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Calories");
             NotifyOfPropertyChanged("Price");
@@ -70,14 +72,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the Entree.
         /// </summary>
-        public virtual string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
         /// <summary>
         /// A list of special instructions to be used during Entree preparation.
         /// </summary>
-        public virtual string[] Special
+        public override string[] Special
         {
             get
             {
@@ -94,7 +96,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The event handler that handles if any properties of the combo were changed.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// An accessor method for invoking a property change.

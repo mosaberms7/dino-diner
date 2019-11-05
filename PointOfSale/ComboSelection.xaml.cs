@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -31,15 +32,19 @@ namespace PointOfSale
 
 
 
-      
+
         /// <summary>
         /// click event handler for trex choice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
         private void TRex_King_BurgerC_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            TRexKingBurger t = new TRexKingBurger();
+            CretaceousCombo cc = new CretaceousCombo(t);
+            AddItem(cc);
+            NavigationService.Navigate(new TRexBurgerCustomize());
 
         }
         /// <summary>
@@ -50,7 +55,10 @@ namespace PointOfSale
 
         private void PB_AND_J_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            CretaceousCombo cc = new CretaceousCombo(pbj);
+            AddItem(cc);
+            NavigationService.Navigate(new PrehistoricPBJCustomize());
 
         }
         /// <summary>
@@ -62,7 +70,11 @@ namespace PointOfSale
 
         private void Steakosarus_Burger_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            SteakosaurusBurger s = new SteakosaurusBurger();
+            CretaceousCombo cc = new CretaceousCombo(s);
+            AddItem(cc);
+
+            NavigationService.Navigate(new SteakosaurusBurgerCustomize());
 
         }
         /// <summary>
@@ -73,7 +85,10 @@ namespace PointOfSale
 
         private void DIno_Nuggets_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            DinoNuggets d = new DinoNuggets();
+            CretaceousCombo cc = new CretaceousCombo(d);
+            AddItem(cc);
+            NavigationService.Navigate(new DinoNuggetsCustomize());
 
         }
         /// <summary>
@@ -85,7 +100,10 @@ namespace PointOfSale
 
         private void Create_Veloci_Wrap_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            VelociWrap v = new VelociWrap();
+            CretaceousCombo cc = new CretaceousCombo(v);
+            AddItem(cc);
+            NavigationService.Navigate(new WrapCustomize());
 
         }
         /// <summary>
@@ -96,6 +114,9 @@ namespace PointOfSale
 
         private void Create_Pterodactyl_Wing_Click(object sender, RoutedEventArgs e)
         {
+            PterodactylWings p = new PterodactylWings();
+            CretaceousCombo cc = new CretaceousCombo(p);
+            AddItem(cc);
             NavigationService.Navigate(new CustomizeCombo());
 
         }
@@ -107,8 +128,23 @@ namespace PointOfSale
 
         private void Create_BrontowurstC_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            Brontowurst b = new Brontowurst();
+            CretaceousCombo cc = new CretaceousCombo(b);
+            AddItem(cc);
+            NavigationService.Navigate(new BrontowurstCustomize());
 
+        }
+        /// <summary>
+        /// adds a new item to the order
+        /// </summary>
+        /// <param name="combo"></param>
+        private void AddItem(CretaceousCombo combo)
+        {
+            if (DataContext is Order order)
+            {
+                order.addItems(combo);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+            }
         }
     }
 }

@@ -125,6 +125,12 @@ namespace DinoDiner.Menu
 
 
         }
+        public override void HoldIce()
+        {
+            base.HoldIce();
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Special");
+        }
 
 
         /// <summary>

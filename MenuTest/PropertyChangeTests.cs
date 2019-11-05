@@ -469,7 +469,7 @@ namespace MenuTest
             Tyrannotea tea = new Tyrannotea();
             Assert.PropertyChanged(tea, "Description", () =>
             {
-                tea.Sweet = true;
+                tea.AddSweet();
             });
         }
 
@@ -630,7 +630,7 @@ namespace MenuTest
             MockOrderItem item = new MockOrderItem();
             Assert.PropertyChanged(order, propertyName, () =>
             {
-                order.Add(item);
+                order.addItems(item);
             });
         }
 
@@ -643,10 +643,10 @@ namespace MenuTest
         {
             Order order = new Order();
             MockOrderItem item = new MockOrderItem();
-            order.Add(item);
+            order.addItems(item);
             Assert.PropertyChanged(order, propertyName, () =>
             {
-                order.Remove(item);
+                order.removeItems(item);
             });
         }
 
@@ -658,7 +658,7 @@ namespace MenuTest
         {
             Order order = new Order();
             MockOrderItem item = new MockOrderItem();
-            order.Add(item);
+            order.addItems(item);
             Assert.PropertyChanged(order, propertyName, () =>
             {
                 item.Mutate();

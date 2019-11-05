@@ -27,6 +27,14 @@ namespace DinoDiner.Menu
             this.Calories = 8;
             this.Sweet = false;
             this.Lemon = false;
+            this.Ice = true;
+        }
+        public override void HoldIce()
+        {
+            this.Ice = false;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ice");
+
         }
         /// <summary>
         /// setter and getter for the flavor property
@@ -87,9 +95,10 @@ namespace DinoDiner.Menu
         public void AddSweet()
         {
             this.Sweet = true;
-            NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Calories");
             NotifyOfPropertyChanged("Sweet");
+            NotifyOfPropertyChanged("Description");
+
 
 
             this.Calories *= 2;
@@ -104,8 +113,9 @@ namespace DinoDiner.Menu
                 this.Sweet = false;
                 this.Calories /= 2;
                 NotifyOfPropertyChanged("Special");
-                NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Sweet");
+                NotifyOfPropertyChanged("Description");
+
             }
         }
         /// <summary>

@@ -1,0 +1,100 @@
+﻿<Page x:Class="PointOfSale.TRexBurgerCustomize"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TRexBurgerCustomize">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="HoldPickel"
+                Click="HoldPickel_Click"
+                Margin="10.20,10">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/pickle.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Name="HoldKetchup"
+                Click="HoldKetchup_Click"
+                Margin="10.20,10"
+                Grid.Row="0"
+                Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/ketchup.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Name="HoldMustard"
+                Click="HoldMustard_Click"
+                Margin="10.20,10"
+                Grid.Row="0"
+                Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/mustard.png"/>
+            </Button.Background>
+        </Button>
+        <Button Name="HoldTomato"
+                Click="HoldTomato_Click"
+                Margin="10.20,10"
+                Grid.Row="1"
+                Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/tomato.png"/>
+            </Button.Background>
+        </Button>
+        <Button Name="HoldBun"
+                Click="HoldBun_Click"
+                Margin="10.20,10"
+            x:Uid="GenerateButton"
+                Grid.Row="1"
+                Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/bun.png"/>
+            </Button.Background>
+        </Button>
+        
+        <Button Name="HoldOnion"
+                Click="HoldOnion_Click"
+                Margin="10.20,10"
+                Grid.Row="1"
+                Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/onion.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Name="HoldMayo"
+                Click="HoldMayo_Click"
+                Margin="10.20,10"
+                Grid.Row="2"
+                Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/mayo.jpg"/>
+            </Button.Background>
+        </Button>
+
+        <Button Name="Done"
+                Click="Done_Click"
+                Margin="10.20,10"
+                Grid.Row="2"
+                Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/done.jpg"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>

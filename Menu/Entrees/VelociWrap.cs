@@ -60,6 +60,7 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.Ceasar_dressing= false;
+            NotifyOfPropertyChanged("Ceasar_dressing");
             NotifyOfPropertyChanged("Special");
 
         }
@@ -69,6 +70,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.romaine_lettuce = false;
+            NotifyOfPropertyChanged("romaine_lettuce");
             NotifyOfPropertyChanged("Special");
 
 
@@ -80,6 +82,15 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.parmesan_cheese = false;
+            NotifyOfPropertyChanged("parmesan_cheese");
+            NotifyOfPropertyChanged("Special");
+
+
+        }
+        public void HoldChicken()
+        {
+            this.chicken_breast = false;
+            NotifyOfPropertyChanged("chicken_breast");
             NotifyOfPropertyChanged("Special");
 
 
@@ -92,7 +103,7 @@ namespace DinoDiner.Menu
         {
             return "Veloci-Wrap";
         }
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -111,7 +122,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of the Entree.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {

@@ -55,11 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BrontowurstCustomize.xaml.cs">
+      <DependentUpon>BrontowurstCustomize.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ComboSelection.xaml.cs">
       <DependentUpon>ComboSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="customoizepbj.xaml.cs">
-      <DependentUpon>customoizepbj.xaml</DependentUpon>
+    <Compile Include="DinoNuggetsCustomize.xaml.cs">
+      <DependentUpon>DinoNuggetsCustomize.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
@@ -79,9 +82,25 @@
     <Compile Include="OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrehistoricPBJCustomize.xaml.cs">
+      <DependentUpon>PrehistoricPBJCustomize.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SteakosaurusBurgerCustomize.xaml.cs">
+      <DependentUpon>SteakosaurusBurgerCustomize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TRexBurgerCustomize.xaml.cs">
+      <DependentUpon>TRexBurgerCustomize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WrapCustomize.xaml.cs">
+      <DependentUpon>WrapCustomize.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BrontowurstCustomize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,7 +109,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="customoizepbj.xaml">
+    <Page Include="DinoNuggetsCustomize.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,7 +152,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PrehistoricPBJCustomize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SideSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteakosaurusBurgerCustomize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TRexBurgerCustomize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WrapCustomize.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,12 +218,35 @@
     <Resource Include="assets\red.png" />
     <Resource Include="assets\dc.jpg" />
     <Resource Include="assets\sugar.jpg" />
+    <Resource Include="assets\bun.png" />
+    <Resource Include="assets\butter.jpg" />
+    <Resource Include="assets\jelly.jpg" />
+    <Resource Include="assets\nuggets %281%29.jpg" />
+    <Resource Include="assets\onion.jpg" />
+    <Resource Include="assets\peppers.jpg" />
+    <Resource Include="assets\done.jpg" />
+    <Resource Include="assets\fun.jpg" />
+    <Resource Include="assets\ketchup.jpg" />
+    <Resource Include="assets\mayo.jpg" />
+    <Resource Include="assets\Mustard.png" />
+    <Resource Include="assets\pickle.jpg" />
+    <Resource Include="assets\tomato.png" />
+    <Resource Include="assets\cesar.jpg" />
+    <Resource Include="assets\chesse.jpg" />
+    <Resource Include="assets\chicken.jpg" />
+    <Resource Include="assets\lettuce.jpg" />
+    <Resource Include="assets\tort.jpg" />
+    <Resource Include="assets\large3.jpg" />
+    <Resource Include="assets\med.jpg" />
+    <Resource Include="assets\med3.jpg" />
+    <Resource Include="assets\sizes.jpg" />
+    <Resource Include="assets\small3.jpg" />
     <Content Include="assets\trex.jpg" />
     <None Include="assets\pay.webp" />
     <None Include="Milestones\1-create-order-pages.workbook" />
     <None Include="Milestones\2-user-interaction-part-I.workbook" />
     <None Include="Milestones\3-user-interaction-part-II.workbook" />
-   <None Include="Properties\Settings.settings">
+    <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
@@ -256,7 +314,6 @@
     <Resource Include="assets\rb.jpg" />
   </ItemGroup>
   <ItemGroup>
-
     <ProjectReference Include="..\Menu\Menu.csproj">
       <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
       <Name>Menu</Name>
