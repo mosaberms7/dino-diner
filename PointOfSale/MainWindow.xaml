@@ -10,7 +10,7 @@
         <menu:Order/>
     </Window.DataContext>-->
     <DockPanel>
-        <local:OrderControl x:Name="OrderControl" Width="200" DockPanel.Dock="Right" Loaded="OrderControl_Loaded_1"  >
+        <local:OrderControl x:Name="OrderControl" MinWidth="200" DockPanel.Dock="Right" Loaded="OrderControl_Loaded_1"  >
         </local:OrderControl>
         <Grid DockPanel.Dock="Bottom" Background="Black">
             <Grid.ColumnDefinitions>

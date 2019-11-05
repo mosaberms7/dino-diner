@@ -31,7 +31,7 @@
                  Background="Black"
                  Grid.ColumnSpan="2"
                  ItemsSource="{ Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
-                 IsSynchronizedWithCurrentItem="True"
+                 IsSynchronizedWithCurrentItem="False"
                  SelectionChanged="UxListBox_SelectionChanged"
                  x:Name="uxListBox">
 

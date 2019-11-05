@@ -24,16 +24,25 @@ namespace PointOfSale
         public DinoDiner.Menu.Size Size { get; private set; }
         public bool sidechoosen = false;
         public bool sizechoosen = false;
+        private Side side;
 
 
         /// <summary>
         /// constructs anew instance of the side page
         /// </summary>
+        public SideSelection3(Side side) {
+
+            InitializeComponent();
+            this.side = side;
+            this.ShowsNavigationUI = false;
+            //this.DataContext = this;
+        }
+
         public SideSelection3()
         {
             InitializeComponent();
             this.ShowsNavigationUI = false;
-            this.DataContext = this;
+           // this.DataContext = this;
 
         }
         /// <summary>
@@ -44,17 +53,15 @@ namespace PointOfSale
         private void SMALL_Click(object sender, RoutedEventArgs e)
         {
             sizechoosen = true;
-            Size = DinoDiner.Menu.Size.Small;
+//            Size = DinoDiner.Menu.Size.Small;
 
-            if (DataContext is Order order)
+            if (side!= null)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                {
-                    side.Size = DinoDiner.Menu.Size.Small;
-                }
+                side.Size = DinoDiner.Menu.Size.Small;
             }
-            if (sidechoosen)
-                NavigationService.GoBack();
+            
+            //if (sidechoosen)
+            //    NavigationService.GoBack();
         }
         /// <summary>
         /// chosse the Med size
@@ -65,17 +72,15 @@ namespace PointOfSale
         {
             sizechoosen = true;
 
-            Size = DinoDiner.Menu.Size.Medium;
+    //        Size = DinoDiner.Menu.Size.Medium;
 
-            if (DataContext is Order order)
+            if (side != null)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                {
-                    side.Size = DinoDiner.Menu.Size.Medium;
-                }
+                side.Size = DinoDiner.Menu.Size.Medium;
             }
-            if (sidechoosen)
-                NavigationService.GoBack();
+
+            //if (sidechoosen)
+            //    NavigationService.GoBack();
         }
         /// <summary>
         /// chosse the large size
@@ -89,15 +94,13 @@ namespace PointOfSale
 
             Size = DinoDiner.Menu.Size.Large;
 
-            if (DataContext is Order order)
+            if (side != null)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                {
-                    side.Size = DinoDiner.Menu.Size.Large;
-                }
+                side.Size = DinoDiner.Menu.Size.Large;
             }
-            if (sidechoosen)
-                NavigationService.GoBack();
+            
+            //if (sidechoosen)
+            //    NavigationService.GoBack();
 
         }
         /// <summary>
@@ -110,8 +113,8 @@ namespace PointOfSale
             sidechoosen = true;
 
             AddItem(new MeteorMacAndCheese());
-            if (sizechoosen)
-                NavigationService.GoBack();
+            //if (sizechoosen)
+            //    NavigationService.GoBack();
 
         }
         /// <summary>
@@ -124,8 +127,8 @@ namespace PointOfSale
             sidechoosen = true;
 
             AddItem(new MezzorellaSticks());
-            if (sizechoosen)
-                NavigationService.GoBack();
+            //if (sizechoosen)
+            //    NavigationService.GoBack();
         }
         /// <summary>
         /// add new side to the order
@@ -137,8 +140,8 @@ namespace PointOfSale
             sidechoosen = true;
 
             AddItem(new Fryceritops());
-            if (sizechoosen)
-                NavigationService.GoBack();
+            //if (sizechoosen)
+            //    NavigationService.GoBack();
         }
         /// <summary>
         /// add new side to the order
@@ -150,8 +153,8 @@ namespace PointOfSale
             sidechoosen = true;
 
             AddItem(new Triceritots());
-            if (sizechoosen)
-                NavigationService.GoBack();
+            //if (sizechoosen)
+            //    NavigationService.GoBack();
 
         }
 
@@ -163,9 +166,10 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
+                this.side = side;
                 side.Size = Size;
                 order.addItems(side);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+              //  CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }
 

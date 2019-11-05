@@ -58,7 +58,21 @@ namespace PointOfSale
 
         private void UxListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (uxListBox.SelectedItem is Side side) {
 
+                //make aconstrurtor taking 
+                NavigationService?.Navigate(new SideSelection3(side));
+
+
+            }
+            if (uxListBox.SelectedItem is Drink drink)
+            {
+
+                //make aconstrurtor taking 
+                NavigationService?.Navigate(new DrinkSelection(drink));
+
+
+            }
         }
     }
     }
