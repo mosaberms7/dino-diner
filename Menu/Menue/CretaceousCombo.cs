@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Defines the Cretaceous Combo object.
     /// </summary>
-    public static class CretaceousCombo : MenuItem, IOrderItem, INotifyPropertyChanged
+    public  class CretaceousCombo : MenuItem, IOrderItem, INotifyPropertyChanged
     {
 
         /// <summary>

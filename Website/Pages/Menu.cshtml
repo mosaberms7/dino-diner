@@ -10,46 +10,71 @@
         <h2>Combo</h2>
         @foreach (var item in Model.Items)
         {
-            if (item is CretaceousCombo combo)
+            if (item is DinoDiner.Menu.CretaceousCombo combo)
             {
-                <div class="menu-item">
-                    <h3>@CretaceousCombo.ToString()</h3>
-                    <p>Calories: @combo.Calories </p>
-                    <p>Price: @combo.Price</p>
-                    @foreach (string s in combo.Ingredients)
-                    {
-                        <p>@s</p>
-                    }
-                    <p>Drink: @combo.Drink</p>
-                    <p>Sides: @combo.Side</p>
-                </div>
-            }
+    <div class="menu-item">
+        <h3>@combo.ToString()</h3>
+        <table class="table">
+            <tr>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Calories</th>
+            </tr>
+            <tr>
+                <td>Small</td>
+                <td>@combo.Price</td>
+                <td>@combo.Calories </td>
+            </tr>
+            @{combo.Size = DinoDiner.Menu.Size.Medium; }
+            <tr>
+                <td>Medium</td>
+                <td>@combo.Price</td>
+                <td>@combo.Calories </td>
+            </tr>
+            @{ combo.Size = DinoDiner.Menu.Size.Large;}
+            <tr>
+                <td>Large</td>
+                <td>@combo.Price</td>
+                <td>@combo.Calories </td>
+            </tr>
+        </table>
+        @foreach (string s in combo.Ingredients)
+        {
+            <p>@s</p>
+        }
+        <p>Drink: @combo.Drink</p>
+        <p>Sides: @combo.Side</p>
+    </div>
+        }
         }
     </div>
+
+
     <div class="column">
         <h2>Entrees</h2>
-        @foreach (var entree in Model.items)
+        @foreach (var item in Model.Items)
         {
-            //if (entree is Entree)
-            //{
+            if (item is DinoDiner.Menu.Entree entree)
+            {
                 <div class="menu-item">
                     <h3>@entree.ToString()</h3>
+
                     @foreach (string s in entree.Ingredients)
                     {
                         <p>@s</p>
                     }
-                    <p>Calories: @entree.Calories </p>
-                    <p>Price: @entree.Price</p>
+                    <p>@entree.Price</p>
+                    <p>@entree.Calories </p>
                 </div>
-          //  }
-        }
-    </div>
+                  }
+            }
+        </div>
     <div class="column">
         <h2>Sides</h2>
-        @foreach (var side in Model.items)
+        @foreach (var side in Model.Items)
         {
-            //if (side is side)
-            //{
+            if (side is DinoDiner.Menu.Side)
+            {
                 <div class="menu-item">
                     <h3>@side.ToString()</h3>
                     @foreach (string s in side.Ingredients)
@@ -59,13 +84,13 @@
                     <p>Calories: @side.Calories </p>
                     <p>Price: @side.Price</p>
                 </div>
-           // }
+            }
         }
         <h2>Drinks</h2>
         @foreach (var drink in Model.Items)
         {
-            //if (drink is Drink)
-            //{
+            if (drink is DinoDiner.Menu.Drink)
+            {
                 <div class="menu-item">
                     <h3>@drink.ToString()</h3>
                     @foreach (string s in drink.Ingredients)
@@ -75,14 +100,13 @@
                     <p>Calories: @drink.Calories</p>
                     <p>Price: @drink.Price</p>
                 </div>
-           // }
+            }
         }
     </div>
     <div class="column">
         <form method="post">
             <input type="text" name="search" id="search" value="@Model.search" />
             <input type="submit" name="Search" />
-
             <div class="menuCategory">
                 <h1>Menu Category</h1>
                 <label>
@@ -104,13 +128,118 @@
                 <h1>Price</h1>
                 <label>
                     Min
-                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="minimumPrice" value="@Model.minPrice" />
+                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="minPrice" value="@Model.MinP" />
                 </label>
                 <label>
                     Max
-                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="maximumPrice" value="@Model.maxPrice" />
+                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="maxPrice" value="@Model.MaxP" />
                 </label>
             </div>
+            <div class="row">
+                <div class="exclude-ingredient">
+                    <h1>Exclude Ingredient</h1>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Whole Wheat Bun" checked="@Model.Exingri.Contains("Bun")" />
+                        Bun
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Peppers" checked="@Model.Exingri.Contains("Peppers")" />
+                        Peppers
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Onion" checked="@Model.Exingri.Contains("Onions")" />
+                        Onions
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Chicken Nugget" checked="@Model.Exingri.Contains("Chicken Nugget")" />
+                        Chicken Nugget
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Peanut Butter" checked="@Model.Exingri.Contains("Peanut Butter")" />
+                        Peanut Butter
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Jelly" checked="@Model.Exingri.Contains("Jelly")" />
+                        Jelly
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Chicken" checked="@Model.Exingri.Contains("Chicken")" />
+                        Chicken
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Pickle" checked="@Model.Exingri.Contains("Pickle")" />
+                        Pickle
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Mustard" checked="@Model.Exingri.Contains("Mustard")" />
+                        Mustard
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Tomato" checked="@Model.Exingri.Contains("Tomato")" />
+                        Tomato
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Mayo" checked="@Model.Exingri.Contains("Mayo")" />
+                        Mayo
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Lettuce" checked="@Model.Exingri.Contains("Lettuce")" />
+                        Lettuce
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Tortilla" checked="@Model.Exingri.Contains("Tortilla")" />
+                        Tortilla
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Chicken Breast" checked="@Model.Exingri.Contains("Chicken Breast")" />
+                        Chicken Breast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ceasar Dressing" checked="@Model.Exingri.Contains("Ceasar Dressing")" />
+                        Ceasar Dressing
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ceasar Dressing" checked="@Model.Exingri.Contains("Ceasar Dressing")" />
+                        Ceasar Dressing
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Steakburger Pattie" checked="@Model.menuCategory.Contains("Steakburger Pattie")" />
+                        Steakburger Pattie
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Wing Sauce" checked="@Model.menuCategory.Contains("Wing Sauce")" />
+                        Wing Sauce
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Potato" checked="@Model.menuCategory.Contains("Potato")" />
+                        Potato
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Salt" checked="@Model.menuCategory.Contains("Salt")" />
+                        Salt
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Vegetable oil" checked="@Model.menuCategory.Contains("Vegetable oil")" />
+                        Vegetable oil
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Macroni Noodles" checked="@Model.menuCategory.Contains("Macroni Noodles")" />
+                        Macroni Noodles
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Cheese Product" checked="@Model.menuCategory.Contains("Cheese Product")" />
+                        Cheese Product
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Pork Sausage" checked="@Model.menuCategory.Contains("Pork Sausage")" />
+                        Pork Sausage
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Breading" checked="@Model.menuCategory.Contains("Breading")" />
+                        Breading
+                    </label>
+                </div>
         </form>
     </div>
 </div>

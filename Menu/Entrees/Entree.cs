@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// an abstract class with 3 properties
     /// </summary>
-   public abstract class  Entree : MenuItem,IOrderItem
+   public abstract class  Entree : MenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// setter and getter fot the Price property

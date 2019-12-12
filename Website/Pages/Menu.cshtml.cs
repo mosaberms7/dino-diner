@@ -5,25 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using DinoDiner.Menu;
+using System.Collections;
+
 
 namespace Website.Pages
 {
     public class MenueModel : PageModel
     {
         public Menue Menu { get; } = new Menue();
+        public IEnumerable<MenuItem> Items;
+        public Size Size { get; }
         [BindProperty]
         public string search { get; set; }
         [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
-        public List<MenuItem> Items { get; set; }
         [BindProperty]
-        public float? minPrice { get; set; }
+        public float? MinP { get; set; }
         [BindProperty]
-        public float? maxPrice { get; set; }
-        public List<MenuItem> items { get; set; }
+        public float? MaxP { get; set; }
+        [BindProperty]
+        public List<string> Exingri { get; set; } = new List<string>();
         public void OnGet()
         {
-            items = Menu.AvailableMenuItems;
+            Items = Menu.AvailableMenuItems;
         }
         public void OnPost()
         {
@@ -31,19 +35,26 @@ namespace Website.Pages
 
             if (search != null)
             {
-                Items = Menu.Search(Items, search);
+                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
             }
             if (menuCategory.Count != 0)
             {
-                Items = Menu.ApplyFilter(Items, menuCategory);
+                Items = Menu.AvailableMenuItems.Where(menuItem => menuCategory.Contains(menuItem.Category));
             }
-            if (minPrice != null)
+            if (MaxP != null)
             {
-                Items = Menu.FilterByMinPrice(Items, (float)minPrice);
+                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Price <= MaxP);
             }
-            if (maxPrice != null)
+            else if (MinP != null)
             {
-                Items = Menu.FilterByMaxPrice(Items, (float)maxPrice);
+                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Price >= MinP);
+            }
+            if (Exingri != null)
+            {
+                foreach (string s in Exingri)
+                {
+                    Items = Menu.AvailableMenuItems.Where(menuItem => !menuItem.Ingredients.Contains(s));
+                }
             }
 
         }
